@@ -114,8 +114,12 @@ public class FirstPersonController : MonoBehaviour
 
     private float rotationX = 0;
 
+    public static FirstPersonController instance;
+
     void Awake()
     {
+        instance = this;
+
         playerCamera = GetComponentInChildren<Camera>();
         characterController = GetComponent<CharacterController>();
         defaultYPos = playerCamera.transform.localPosition.y;
