@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class WelcomeInteraction : Interactable
+public class WelcomeDialogue : MonoBehaviour
 {
     private bool canBeInteractedWith = true;
     public TextMeshProUGUI textComponent;
@@ -12,23 +12,26 @@ public class WelcomeInteraction : Interactable
 
     private int index;
 
-    private void Start()
+    void Start()
     {
-        
+        textComponent.text = string.Empty;
+        StartDialogue();
     }
 
-    private void Update()
+    void Update()
     {
-        if (Input.GetMouseButtonDown(0))
         {
-            if (textComponent.text == lines[index])
+            if (Input.GetMouseButtonDown(0))
             {
-                NextLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                textComponent.text = lines[index];
+                if (textComponent.text == lines[index])
+                {
+                    NextLine();
+                }
+                else
+                {
+                    StopAllCoroutines();
+                    textComponent.text = lines[index];
+                }
             }
         }
     }
@@ -62,23 +65,6 @@ public class WelcomeInteraction : Interactable
         }
     }
 
-    public override void OnFocus()
-    {
-        print("LOOKING AT " + gameObject.name);
-    }
 
-    public override void OnInteract()
-    {
-        if (canBeInteractedWith)
-        {
-            textComponent.text = string.Empty;
-            StartDialogue();
-        }
-    }
 
-    public override void OnLoseFocus()
-    {
-        print("STOPPED LOOKING AT " + gameObject.name);
-    }
 }
-

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestInteractable : Interactable
+public class TestInteract : Interactable
 {
     public override void OnFocus()
     {
