@@ -2,25 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance { get; set; }
     public GameObject dialoguePanel;
-    public string npcName;
-    public List<string> dialogueLines = new List<string>();
 
-    Button continueButton;
-    Text dialogueText, nameText;
+    string currentCharacterName;
+    List<string> currentDialogueLines = new List<string>();
+
+    //Button continueButton;
+    TextMeshProUGUI dialogue, characterName;
     int dialogueIndex;
 
 
     void Awake()
     {
-        continueButton = dialoguePanel.transform.Find("Continue").GetComponent<Button>();
-        dialogueText = dialoguePanel.transform.Find("Text").GetComponent<Text>();
-        nameText = dialoguePanel.transform.Find("Name").GetChild(0).GetComponent<Text>();
-        continueButton.onClick.AddListener(delegate { ContinueDialogue(); } );
+        var dialogueChild = dialoguePanel.transform.Find("DialogueText");
+        dialogue = dialogueChild.GetComponent<TextMeshProUGUI>();
+        var characterNameChild = dialoguePanel.transform.Find("Panel").transform.Find("NameText");
+        characterName = characterNameChild.GetComponent<TextMeshProUGUI>();
+
+        //continueButton.onClick.AddListener(delegate { ContinueDialogue(); } );
+        //continueButton = dialoguePanel.transform.Find("Continue").GetComponent<Button>();
+
         dialoguePanel.SetActive(false);
 
 
@@ -34,30 +40,27 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void AddNewDialogue(string[] lines, string npcName)
+    public void AddNewDialogue(string[] lines, string name)
     {
         dialogueIndex = 0;
-        dialogueLines = new List<string>(lines.Length);
-        dialogueLines.AddRange(lines);
-
-        this.npcName = npcName;
-        Debug.Log(dialogueLines.Count);
+        this.currentDialogueLines = new List<string>(lines);
+        this.currentCharacterName = name;
         CreateDialogue();
     }
 
     public void CreateDialogue()
     {
-        dialogueText.text = dialogueLines[dialogueIndex];
-        nameText.text = npcName;
+        this.dialogue.text = this.currentDialogueLines[dialogueIndex];
+        this.characterName.text = this.currentCharacterName;
         dialoguePanel.SetActive(true);
     }
 
     public void ContinueDialogue()
     {
-        if(dialogueIndex < dialogueLines.Count - 1)
+        if(dialogueIndex < this.currentDialogueLines.Count - 1)
         {
             dialogueIndex++;
-            dialogueText.text = dialogueLines[dialogueIndex];
+            this.dialogue.text = this.currentDialogueLines[dialogueIndex];
         }
         else
         {
