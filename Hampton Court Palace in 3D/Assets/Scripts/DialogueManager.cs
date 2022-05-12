@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance { get; set; }
     public GameObject dialoguePanel;
+    public float textSpeed;
 
     string currentCharacterName;
     List<string> currentDialogueLines = new List<string>();
@@ -40,11 +41,28 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void AddNewDialogue(string[] lines, string name)
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (this.dialogue.text == currentDialogueLines[dialogueIndex])
+            {
+                ContinueDialogue();
+            }
+            else
+            {
+                StopAllCoroutines();
+                this.dialogue.text = currentDialogueLines[dialogueIndex];
+            }
+        }
+    }
+
+    public void AddNewDialogue(string[] dialogue, string name)
     {
         dialogueIndex = 0;
-        this.currentDialogueLines = new List<string>(lines);
+        this.currentDialogueLines = new List<string>(currentDialogueLines);
         this.currentCharacterName = name;
+        StartCoroutine(TypeLine());
         CreateDialogue();
     }
 
@@ -61,10 +79,20 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueIndex++;
             this.dialogue.text = this.currentDialogueLines[dialogueIndex];
+            StartCoroutine(TypeLine());
         }
         else
         {
             dialoguePanel.SetActive(false);
+        }
+    }
+
+    IEnumerator TypeLine()
+    {
+        foreach (char c in currentDialogueLines[dialogueIndex].ToCharArray())
+        {
+            this.dialogue.text += c;
+            yield return new WaitForSeconds(textSpeed);
         }
     }
 }

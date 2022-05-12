@@ -57,6 +57,7 @@ public class WelcomeDialogue : MonoBehaviour
         {
             index++;
             textComponent.text = string.Empty;
+            Debug.Log(lines.Length);
             StartCoroutine(TypeLine());
         }
         else
