@@ -6,6 +6,7 @@ public class NPC : Interactable
 {
     public string[] dialogue;
     public string characterName;
+    public Sprite portrait;
 
     public override void OnFocus()
     {
@@ -16,6 +17,7 @@ public class NPC : Interactable
     {
         Debug.Log("Interacting with NPC class");
         DialogueManager.Instance.AddNewDialogue(dialogue, characterName);
+        DialogueManager.Instance.AddPortrait(portrait);
     }
 
     public override void OnLoseFocus()

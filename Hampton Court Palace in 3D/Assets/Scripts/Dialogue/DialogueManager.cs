@@ -6,6 +6,7 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    private bool canBeInteractedWith = true;
     public static DialogueManager Instance { get; set; }
     public GameObject dialoguePanel;
     public float textSpeed;
@@ -13,9 +14,10 @@ public class DialogueManager : MonoBehaviour
     string currentCharacterName;
     List<string> currentDialogueLines = new List<string>();
 
-    //Button continueButton;
     TextMeshProUGUI dialogue, characterName;
     int dialogueIndex;
+    public Sprite characterPortrait;
+    Sprite portrait;
 
 
     void Awake()
@@ -24,9 +26,8 @@ public class DialogueManager : MonoBehaviour
         dialogue = dialogueChild.GetComponent<TextMeshProUGUI>();
         var characterNameChild = dialoguePanel.transform.Find("Panel").transform.Find("NameText");
         characterName = characterNameChild.GetComponent<TextMeshProUGUI>();
-
-        //continueButton.onClick.AddListener(delegate { ContinueDialogue(); } );
-        //continueButton = dialoguePanel.transform.Find("Continue").GetComponent<Button>();
+        var characterPortraitChild = dialoguePanel.transform.Find("Portrait");
+        portrait = characterPortraitChild.GetComponent<Image>().sprite;
 
         dialoguePanel.SetActive(false);
 
@@ -51,18 +52,16 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                StopAllCoroutines();
                 this.dialogue.text = currentDialogueLines[dialogueIndex];
             }
         }
     }
 
-    public void AddNewDialogue(string[] dialogue, string name)
+    public void AddNewDialogue(string[] lines, string name)
     {
         dialogueIndex = 0;
-        this.currentDialogueLines = new List<string>(currentDialogueLines);
+        this.currentDialogueLines = new List<string>(lines);
         this.currentCharacterName = name;
-        StartCoroutine(TypeLine());
         CreateDialogue();
     }
 
@@ -79,7 +78,6 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueIndex++;
             this.dialogue.text = this.currentDialogueLines[dialogueIndex];
-            StartCoroutine(TypeLine());
         }
         else
         {
@@ -87,12 +85,9 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    IEnumerator TypeLine()
+    public void AddPortrait(Sprite characterPortrait)
     {
-        foreach (char c in currentDialogueLines[dialogueIndex].ToCharArray())
-        {
-            this.dialogue.text += c;
-            yield return new WaitForSeconds(textSpeed);
-        }
+        this.characterPortrait = characterPortrait;
+        dialoguePanel.transform.Find("Portrait").GetComponent<Image>().sprite = characterPortrait;
     }
 }
