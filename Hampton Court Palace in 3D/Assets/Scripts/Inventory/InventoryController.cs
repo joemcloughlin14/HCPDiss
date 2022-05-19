@@ -26,16 +26,17 @@ public class InventoryController : MonoBehaviour
         //GiveItem("potion_log");
     }
 
-    //public void GiveItem(string itemSlug)
-    //{
-    //    playerItems.Add(ItemDatabase.Instance.GetItem(itemSlug));
-    //    Debug.Log(playerItems.Count + " items in inventory. Added: " + itemSlug);
-    //}
+    public void GiveItem(string itemSlug)
+    {
+        Debug.Log("Got to this point (GiveItem).");
+        playerItems.Add(ItemDatabase.Instance.GetItem(itemSlug));
+        Debug.Log(playerItems.Count + " items in inventory. Added: " + itemSlug);
+    }
 
-    //public void SetItemDetails(Item item, Button selectedButton)
-    //{
-    //    inventoryDetailsPanel.SetItem(item, selectedButton);
-    //}
+    public void SetItemDetails(Item item, Button selectedButton)
+    {
+        inventoryDetailsPanel.SetItem(item, selectedButton);
+    }
 
     //public void ConsumeItem(Item itemToConsume)
     //{

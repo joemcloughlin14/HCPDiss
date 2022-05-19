@@ -16,11 +16,11 @@ public class InventoryUIDetails : MonoBehaviour
     //    itemDescriptionText = transform.Find("Item_Description").GetComponent<TextMeshProUGUI>();
     //}
 
-    //public void SetItem(Item item, Button selectedButton)
-    //{
+    public void SetItem(Item item, Button selectedButton)
+    {
     //    this.item = item;
     //    selectedItemButton = selectedButton;
     //    itemNameText.text = item.ItemName;
     //    itemDescriptionText.text = item.Description;
-    //}
+    }
 }
