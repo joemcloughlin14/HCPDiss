@@ -19,10 +19,10 @@ public class InventoryUIItem : MonoBehaviour
         this.transform.Find("Item_Name").GetComponent<TextMeshProUGUI>().text = item.ItemName;
     }
 
-    public void OnSelectItem()
+    public void OnSelectItemButton()
     {
         Debug.Log("It worked!");
-        InventoryController.Instance.SetItemDetails(item);
+        InventoryController.Instance.SetItemDetails(item, GetComponent<Button>());
     }
     
 }

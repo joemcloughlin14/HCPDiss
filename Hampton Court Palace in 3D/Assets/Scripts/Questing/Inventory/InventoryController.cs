@@ -22,6 +22,8 @@ public class InventoryController : MonoBehaviour
         }
 
         consumableController = GetComponent<ConsumableController>();
+        GiveItem("sword");
+        GiveItem("potion_log");
     }
 
     public void GiveItem(string itemSlug)
@@ -30,9 +32,9 @@ public class InventoryController : MonoBehaviour
         Debug.Log(playerItems.Count + " items in inventory. Added: " + itemSlug);
     }
 
-    public void SetItemDetails(Item item)
+    public void SetItemDetails(Item item, Button selectedButton)
     {
-        inventoryDetailsPanel.SetItem(item);
+        inventoryDetailsPanel.SetItem(item, selectedButton);
     }
 
     public void ConsumeItem(Item itemToConsume)

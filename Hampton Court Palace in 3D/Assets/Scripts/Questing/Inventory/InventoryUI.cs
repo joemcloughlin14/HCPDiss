@@ -20,6 +20,8 @@ public class InventoryUI : MonoBehaviour
 
     void ItemAdded(Item item)
     {
-
+        InventoryUIItem emptyItem = Instantiate(itemContainer);
+        emptyItem.SetItem(item);
+        emptyItem.transform.SetParent(scrollViewContent);
     }
 }

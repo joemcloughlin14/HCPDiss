@@ -16,7 +16,7 @@ public class InventoryUIDetails : MonoBehaviour
         itemDescriptionText = transform.Find("Item_Description").GetComponent<TextMeshProUGUI>();
     }
 
-    public void SetItem(Item item)
+    public void SetItem(Item item, Button selectedButton)
     {
         this.item = item;
         selectedItemButton = selectedButton;
