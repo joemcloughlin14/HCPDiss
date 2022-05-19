@@ -9,11 +9,14 @@ public class InventoryUIDetails : MonoBehaviour
     Item item;
     Button selectedItemButton;
     TextMeshProUGUI itemNameText, itemDescriptionText;
+    public InventoryUIDetails inventoryDetailsPanel; // Check where this needs to be used.
 
     private void Start()
     {
-        itemNameText = transform.Find("Item_Name").GetComponent<TextMeshProUGUI>();
-        itemDescriptionText = transform.Find("Item_Description").GetComponent<TextMeshProUGUI>();
+        var itemNameChild = inventoryDetailsPanel.transform.Find("Inventory_Details").transform.Find("Item_Name");
+        itemNameText = itemNameChild.GetComponent<TextMeshProUGUI>();
+        var itemDescriptionChild = inventoryDetailsPanel.transform.Find("Inventory_Details").transform.Find("Item_Description");
+        itemDescriptionText = itemDescriptionChild.GetComponent<TextMeshProUGUI>();
     }
 
     public void SetItem(Item item, Button selectedButton)

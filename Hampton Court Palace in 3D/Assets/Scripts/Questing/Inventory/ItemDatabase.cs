@@ -8,7 +8,7 @@ public class ItemDatabase : MonoBehaviour
     public static ItemDatabase Instance { get; set; }
     private List<Item> Items { get; set; }
    
-    void Start()
+    void Awake()
     {
         if (Instance != null && Instance != this)
             Destroy(gameObject);

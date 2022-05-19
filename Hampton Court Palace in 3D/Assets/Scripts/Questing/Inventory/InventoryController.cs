@@ -28,8 +28,10 @@ public class InventoryController : MonoBehaviour
 
     public void GiveItem(string itemSlug)
     {
-        playerItems.Add(ItemDatabase.Instance.GetItem(itemSlug));
+        Item item = ItemDatabase.Instance.GetItem(itemSlug);
+        playerItems.Add(item);
         Debug.Log(playerItems.Count + " items in inventory. Added: " + itemSlug);
+        UIEventHandler.ItemAddedToInventory(item);
     }
 
     public void SetItemDetails(Item item, Button selectedButton)
