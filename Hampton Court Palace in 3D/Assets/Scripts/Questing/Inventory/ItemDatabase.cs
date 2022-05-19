@@ -20,17 +20,18 @@ public class ItemDatabase : MonoBehaviour
     private void BuildDatabase()
     {
         Items = JsonConvert.DeserializeObject<List<Item>>(Resources.Load<TextAsset>("JSON/Items").ToString());
-        Debug.Log(Items[0].ItemName + " has " + Items[0].Description);
+        Debug.Log(Items[0].ItemName);
+        //Debug.Log(Items[0].ItemName + " has " + Items[0].Description);
     }
 
-    public Item GetItem(string itemSlug)
-    {
-        foreach (Item item in Items)
-        {
-            if (item.ObjectSlug == itemSlug)
-                return item;
-        }
-        Debug.LogWarning("Couldn't find item " + itemSlug);
-        return null;
-    }
+    //public Item GetItem(string itemSlug)
+    //{
+    //    foreach (Item item in Items)
+    //    {
+    //        if (item.ObjectSlug == itemSlug)
+    //            return item;
+    //    }
+    //    Debug.LogWarning("Couldn't find item " + itemSlug);
+    //    return null;
+    //}
 }

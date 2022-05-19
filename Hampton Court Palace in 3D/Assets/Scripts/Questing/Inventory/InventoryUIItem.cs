@@ -6,23 +6,23 @@ using TMPro;
 
 public class InventoryUIItem : MonoBehaviour
 {
-    public Item item;
+    //public Item item;
 
-    public void SetItem(Item item)
-    {
-        this.item = item;
-        SetUpItemValues();
-    }
+    //public void SetItem(Item item)
+    //{
+    //    this.item = item;
+    //    SetUpItemValues();
+    //}
 
-    void SetUpItemValues()
-    {
-        this.transform.Find("Item_Name").GetComponent<TextMeshProUGUI>().text = item.ItemName;
-    }
+    //void SetUpItemValues()
+    //{
+    //    this.transform.Find("Item_Name").GetComponent<TextMeshProUGUI>().text = item.ItemName;
+    //}
 
-    public void OnSelectItemButton()
-    {
-        Debug.Log("It worked!");
-        //InventoryController.Instance.SetItemDetails(item, selectedButton);
-    }
+    //public void OnSelectItemButton()
+    //{
+    //    Debug.Log("It worked!");
+    //    InventoryController.Instance.SetItemDetails(item, GetComponent<Button>());
+    //}
     
 }
