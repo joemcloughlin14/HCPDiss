@@ -24,9 +24,6 @@ public class Item
         this.ObjectSlug = _ObjectSlug;
         this.Description = _Description;
         this.ItemType = _ItemType;
-
-
-
         this.ActionName = _ActionName;
         this.ItemName = _ItemName;
     }

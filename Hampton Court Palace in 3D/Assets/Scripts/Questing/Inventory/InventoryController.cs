@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class InventoryController : MonoBehaviour
 {
     public static InventoryController Instance { get; set; }
-    public ConsumableController consumableController;
+    //public ConsumableController consumableController;
     public InventoryUIDetails inventoryDetailsPanel;
     public List<Item> playerItems = new List<Item>();
 
@@ -21,7 +21,7 @@ public class InventoryController : MonoBehaviour
             Instance = this;
         }
 
-        consumableController = GetComponent<ConsumableController>();
+        //consumableController = GetComponent<ConsumableController>();
     }
 
     public void GiveItem(string itemSlug)
@@ -30,13 +30,13 @@ public class InventoryController : MonoBehaviour
         Debug.Log(playerItems.Count + " items in inventory. Added: " + itemSlug);
     }
 
-    public void SetItemDetails(Item item)
+    public void SetItemDetails(Item item, Button selectedButton)
     {
-        inventoryDetailsPanel.SetItem(item);
+        inventoryDetailsPanel.SetItem(item, selectedButton);
     }
 
-    public void ConsumeItem(Item itemToConsume)
-    {
-        consumableController.ConsumeItem(itemToConsume);
-    }
+    //public void ConsumeItem(Item itemToConsume)
+    //{
+    //    consumableController.ConsumeItem(itemToConsume);
+    //}
 }

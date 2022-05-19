@@ -10,7 +10,6 @@ public class InventoryUI : MonoBehaviour
     bool menuIsActive { get; set; }
     Item currentSelectedItem { get; set; }
 
-    // Start is called before the first frame update
     void Start()
     {
         itemContainer = Resources.Load<InventoryUIItem>("UI/Item_Container");
