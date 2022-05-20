@@ -8,6 +8,9 @@ public class InventoryUIItem : MonoBehaviour
 {
     public Item item;
 
+    public Image itemImage;
+    public TextMeshProUGUI itemText;
+
     public void SetItem(Item item)
     {
         this.item = item;

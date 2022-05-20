@@ -12,7 +12,6 @@ public class InventoryController : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Hello");
         if(Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -23,7 +22,7 @@ public class InventoryController : MonoBehaviour
         }
 
         //consumableController = GetComponent<ConsumableController>();
-        //GiveItem("sword");
+        GiveItem("sword");
         GiveItem("potion_log");
     }
 
@@ -38,6 +37,7 @@ public class InventoryController : MonoBehaviour
 
     public void SetItemDetails(Item item, Button selectedButton)
     {
+        Debug.Log("Got to setitemdetails point :)");
         inventoryDetailsPanel.SetItem(item, selectedButton);
     }
 

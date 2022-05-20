@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -46,7 +47,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (this.dialogue.text == currentDialogueLines[dialogueIndex])
+            if (this.dialogue.text == currentDialogueLines[dialogueIndex])      // Issue with this line. To check
             {
                 ContinueDialogue();
             }
@@ -74,6 +75,7 @@ public class DialogueManager : MonoBehaviour
 
     public void ContinueDialogue()
     {
+        Debug.Log("the value of index is now: " + dialogueIndex);
         if(dialogueIndex < this.currentDialogueLines.Count - 1)
         {
             dialogueIndex++;

@@ -22,7 +22,7 @@ public class ItemDatabase : MonoBehaviour
     {
         Items = JsonConvert.DeserializeObject<List<Item>>(Resources.Load<TextAsset>("JSON/Items").ToString());
         Debug.Log(Items[2].ItemName);
-        //Debug.Log(Items[0].ItemName + " has " + Items[0].Description);
+        Debug.Log(Items[0].ItemName + " has " + Items[0].Description);
     }
 
     public Item GetItem(string itemSlug)
