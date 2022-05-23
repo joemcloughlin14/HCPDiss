@@ -17,10 +17,12 @@ public class InventoryUIDetails : MonoBehaviour
         itemNameText = transform.Find("Item_Name").GetComponent<TextMeshProUGUI>();
         itemDescriptionText = transform.Find("Item_Description").GetComponent<TextMeshProUGUI>();
         Debug.Log("Found " + itemDescriptionText);
+        RemoveItem();
     }
 
     public void SetItem(Item item, Button selectedButton)
     {
+        gameObject.SetActive(true);
         Debug.Log("Got to SetItem");
         Debug.Log("found: " + itemNameText);
         this.item = item;
@@ -28,5 +30,10 @@ public class InventoryUIDetails : MonoBehaviour
         itemNameText.text = item.ItemName;
         itemDescriptionText.text = item.Description;
         
+    }
+
+    public void RemoveItem()
+    {
+        gameObject.SetActive(false);
     }
 }

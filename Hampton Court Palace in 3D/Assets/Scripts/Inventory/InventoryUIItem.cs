@@ -8,8 +8,8 @@ public class InventoryUIItem : MonoBehaviour
 {
     public Item item;
 
-    public Image itemImage;
     public TextMeshProUGUI itemText;
+    public Image itemImage;
 
     public void SetItem(Item item)
     {
@@ -19,7 +19,9 @@ public class InventoryUIItem : MonoBehaviour
 
     void SetUpItemValues()
     {
-        this.transform.Find("Item_Name").GetComponent<TextMeshProUGUI>().text = item.ItemName;
+        itemText.text = item.ItemName;
+        itemImage.sprite = Resources.Load<Sprite>("UI/Icons/Items/" + item.ObjectSlug);
+        //this.transform.Find("Item_Name").GetComponent<TextMeshProUGUI>().text = item.ItemName;
     }
 
     public void OnSelectItemButton()
