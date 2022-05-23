@@ -23,21 +23,31 @@ public class InventoryController : MonoBehaviour
 
         //consumableController = GetComponent<ConsumableController>();
         GiveItem("sword");
-        GiveItem("potion_log");
+        //GiveItem("potion_log");
     }
 
     public void GiveItem(string itemSlug)
     {
-        Debug.Log("Got to this point (GiveItem).");
         Item item = ItemDatabase.Instance.GetItem(itemSlug);
-        playerItems.Add(item);
-        Debug.Log(playerItems.Count + " items in inventory. Added: " + itemSlug);
-        UIEventHandler.ItemAddedToInventory(item);
+        if (!playerItems.Contains(item))
+        {
+            playerItems.Add(item);
+            Debug.Log(playerItems.Count + " items in inventory. Added: " + itemSlug);
+            UIEventHandler.ItemAddedToInventory(item);
+        }
+    }
+
+    public void GiveItem(Item item)
+    {
+        if (!playerItems.Contains(item))
+        {
+            playerItems.Add(item);
+            UIEventHandler.ItemAddedToInventory(item);
+        }
     }
 
     public void SetItemDetails(Item item, Button selectedButton)
     {
-        Debug.Log("Got to setitemdetails point :)");
         inventoryDetailsPanel.SetItem(item, selectedButton);
     }
 

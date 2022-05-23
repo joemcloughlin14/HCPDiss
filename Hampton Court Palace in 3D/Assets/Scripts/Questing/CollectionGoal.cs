@@ -19,6 +19,16 @@ public class CollectionGoal : Goal
     public override void Init()
     {
         base.Init();
-        
+        UIEventHandler.OnItemAddedToInventory += ItemPickedUp;
+    }
+
+    void ItemPickedUp(Item item)
+    {
+        if (item.ObjectSlug == this.ItemID)
+        {
+            Debug.Log("Detected pick-up of: " + ItemID);
+            this.CurrentAmount++;
+            Evaluate();
+        }
     }
 }

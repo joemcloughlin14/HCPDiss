@@ -27,7 +27,7 @@ public class InventoryUIItem : MonoBehaviour
     public void OnSelectItemButton()
     {
         Debug.Log("It worked!");
-        InventoryController.Instance.SetItemDetails(item, GetComponent<Button>());  // currently gives null pointer.
+        InventoryController.Instance.SetItemDetails(item, GetComponent<Button>());
     }
     
 }
