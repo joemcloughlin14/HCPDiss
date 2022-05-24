@@ -43,4 +43,9 @@ public class InventoryUI : MonoBehaviour
         emptyItem.SetItem(item);
         emptyItem.transform.SetParent(scrollViewContent);
     }
+
+    public bool inventoryIsOpen()
+    {
+        return menuIsActive;
+    }
 }

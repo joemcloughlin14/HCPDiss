@@ -8,6 +8,7 @@ public class FirstPersonController : MonoBehaviour
     private bool IsSprinting => canSprint && Input.GetKey(sprintKey);
     private bool ShouldJump => Input.GetKeyDown(jumpKey) && characterController.isGrounded;
     private bool ShouldCrouch => Input.GetKeyDown(crouchKey) && !duringCrouchAnimation && characterController.isGrounded;
+    [SerializeField] InventoryUI Inventory;
 
     [Header("Functional Options")]
     [SerializeField] private bool canSprint = true;
@@ -119,7 +120,8 @@ public class FirstPersonController : MonoBehaviour
     void Awake()
     {
         instance = this;
-
+        //Inventory = GameObject.Find("Inventory");                 // don't do this, serializefield instead.
+        //Inventory.inventoryIsOpen();                                // this replaces getComponent
         playerCamera = GetComponentInChildren<Camera>();
         characterController = GetComponent<CharacterController>();
         defaultYPos = playerCamera.transform.localPosition.y;
@@ -130,7 +132,7 @@ public class FirstPersonController : MonoBehaviour
 
     void Update()
     {
-        if (CanMove)
+        if (CanMove && !DialogueManager.Instance.isConversationActive() && !Inventory.inventoryIsOpen())
         {
             HandleMovementInput();
             HandleMouseLook();

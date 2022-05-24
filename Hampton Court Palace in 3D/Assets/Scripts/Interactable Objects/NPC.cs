@@ -16,8 +16,7 @@ public class NPC : Interactable
     public override void OnInteract()
     {
         Debug.Log("Interacting with NPC class");
-        DialogueManager.Instance.AddNewDialogue(dialogue, characterName);
-        DialogueManager.Instance.AddPortrait(portrait);
+        DialogueManager.Instance.AddNewDialogue(dialogue, characterName, portrait);
     }
 
     public override void OnLoseFocus()

@@ -1,60 +1,30 @@
 [
   {
-    "objectSlug": "sword",
-    "itemName": "Sword",
-    "description": "A long, sharp blade.",
-    "itemType": "Weapon",
-    "actionName": "Equip",
-    "itemModifier": 0,
-    "Stats": [
-      {
-        "StatType": "Power",
-        "BaseValue": 25,
-        "StatName": "Power"
-      },
-      {
-        "StatType": "Toughness",
-        "BaseValue": 4,
-        "StatName": "Tougness"
-      },
-      {
-        "StatType": "AttackSpeed",
-        "BaseValue": 4,
-        "StatName": "Atk Spd"
-      }
-    ]
+    "objectSlug": "great_kitchens",
+    "itemName": "Great Kitchens",
+    "initialDescription": "Added to database.",
+    "description": "Lots happened here, it was very hot.",
+    "itemType": "Weapon"
   },
   {
     "objectSlug": "staff",
     "itemName": "Cactus",
+    "initialDescription": "Added to database.",
     "description": "A long, sharp cactus.",
-    "itemType":  "Weapon",
-    "actionName": "Equip",
-    "itemModifier": 0,
-    "Stats": [
-      {
-        "StatType":  "Power",
-        "BaseValue": 800,
-        "StatName": "Power"
-      },
-      {
-        "StatType": "Toughness",
-        "BaseValue": 2,
-        "StatName": "Tougness"
-      },
-      {
-        "StatType":  "AttackSpeed",
-        "BaseValue": 1,
-        "StatName": "Atk Spd"
-      }
-    ]
+    "itemType": "Weapon"
   },
   {
-    "objectSlug": "potion_log",
-    "itemName": "Log Potion",
-    "description": "A potion that logs something to the console.",
-    "itemType": "Consumable",
-    "actionName": "Drink",
-    "itemModifier": 0
+    "objectSlug": "story_of_abraham_tapestries",
+    "itemName": "Story of Abraham Tapestries",
+    "initialDescription": "Story of Abraham Tapestries added to database.",
+    "description": "Created for this very space in the Great Hall, made of cloth of gold, silver and silk. Very expensive.",
+    "itemType": "Consumable"
+  },
+  {
+    "objectSlug": "Old Barrel",
+    "itemName": "Old Barrel",
+    "initialDescription":  "Item Added to Database: A plain old barrel. Once stored wine. Press I to read more.",
+    "description": "Henry VIII had vast stores of wine and beer for his court. A barrel just like this would have been kept in the cellar under the Great Hall to keep it at a suitably cool temperature.",
+    "itemType": "Quest"
   }
 ]

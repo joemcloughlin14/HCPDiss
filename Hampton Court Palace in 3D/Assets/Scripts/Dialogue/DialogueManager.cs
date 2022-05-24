@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager Instance { get; set; }
     public GameObject dialoguePanel;
     public float textSpeed;
+    private bool conversationActive;
 
     string currentCharacterName;
     List<string> currentDialogueLines = new List<string>();
@@ -31,6 +32,7 @@ public class DialogueManager : MonoBehaviour
         portrait = characterPortraitChild.GetComponent<Image>().sprite;
 
         dialoguePanel.SetActive(false);
+        conversationActive = false;
 
 
         if(Instance != null && Instance != this)
@@ -47,49 +49,46 @@ public class DialogueManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (this.dialogue.text == currentDialogueLines[dialogueIndex])      // Issue with this line. To check
-            {
-                ContinueDialogue();
-            }
-            else
-            {
-                this.dialogue.text = currentDialogueLines[dialogueIndex];
-            }
+            ContinueDialogue();
         }
     }
 
-    public void AddNewDialogue(string[] lines, string name)
+    public void AddNewDialogue(string[] lines, string name, Sprite characterPortrait)
     {
+        if (conversationActive)
+        {
+            return;
+        }
         dialogueIndex = 0;
         this.currentDialogueLines = new List<string>(lines);
         this.currentCharacterName = name;
-        CreateDialogue();
-    }
-
-    public void CreateDialogue()
-    {
-        this.dialogue.text = this.currentDialogueLines[dialogueIndex];
-        this.characterName.text = this.currentCharacterName;
         dialoguePanel.SetActive(true);
+        conversationActive = true;
+        this.characterPortrait = characterPortrait;
+        dialoguePanel.transform.Find("Portrait").GetComponent<Image>().sprite = characterPortrait;
     }
 
     public void ContinueDialogue()
     {
         Debug.Log("the value of index is now: " + dialogueIndex);
-        if(dialogueIndex < this.currentDialogueLines.Count - 1)
+        if(dialogueIndex < this.currentDialogueLines.Count)
         {
-            dialogueIndex++;
             this.dialogue.text = this.currentDialogueLines[dialogueIndex];
+            dialogueIndex++;
         }
         else
         {
             dialoguePanel.SetActive(false);
         }
+
+        if (dialogueIndex == currentDialogueLines.Count)
+        {
+            conversationActive = false;
+        }
     }
 
-    public void AddPortrait(Sprite characterPortrait)
+    public bool isConversationActive()
     {
-        this.characterPortrait = characterPortrait;
-        dialoguePanel.transform.Find("Portrait").GetComponent<Image>().sprite = characterPortrait;
+        return conversationActive;
     }
 }
