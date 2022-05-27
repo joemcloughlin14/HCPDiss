@@ -6,6 +6,7 @@ public class InventoryUI : MonoBehaviour
 {
     public RectTransform inventoryPanel;
     public RectTransform scrollViewContent;
+    public GameObject Dialogue;
     InventoryUIItem itemContainer { get; set; }
     bool menuIsActive { get; set; }
     Item currentSelectedItem { get; set; }
@@ -22,17 +23,19 @@ public class InventoryUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             menuIsActive = !menuIsActive;
+            
             inventoryPanel.gameObject.SetActive(menuIsActive);
             if (menuIsActive)
             {
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-                
+                Dialogue.gameObject.SetActive(false);
             }
             else
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+                Dialogue.gameObject.SetActive(true);
             }
         }
     }

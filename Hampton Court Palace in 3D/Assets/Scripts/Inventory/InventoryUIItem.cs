@@ -7,6 +7,7 @@ using TMPro;
 public class InventoryUIItem : MonoBehaviour
 {
     public Item item;
+    private GameObject Inventory_Details;           // to sort for clicking inventory item to get rid of details panel.
 
     public TextMeshProUGUI itemText;
     public Image itemImage;

@@ -20,7 +20,7 @@ public class InventoryController : MonoBehaviour
             Instance = this;
         }
 
-        GiveItem("sword");
+        //GiveItem("sword");
     }
 
     public void GiveItem(string itemSlug)
@@ -47,9 +47,4 @@ public class InventoryController : MonoBehaviour
     {
         inventoryDetailsPanel.SetItem(item, selectedButton);
     }
-
-    //public void ConsumeItem(Item itemToConsume)
-    //{
-    //    consumableController.ConsumeItem(itemToConsume);
-    //}
 }

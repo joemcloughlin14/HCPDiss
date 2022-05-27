@@ -9,7 +9,6 @@ public class UIEventHandler : MonoBehaviour
 
     public static void ItemAddedToInventory(Item item)
     {
-        Debug.Log("item added to inventory!!!");
         OnItemAddedToInventory(item);
     }
 

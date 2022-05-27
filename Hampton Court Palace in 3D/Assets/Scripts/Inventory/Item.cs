@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 public class Item
 {
-    public enum ItemTypes { Weapon, Consumable, Quest }             // Would need to add itemtype here for non important.
+    public enum ItemTypes { Weapon, Consumable, Quest, Character }             // Would need to add itemtype here for non important.
     public string ObjectSlug { get; set; }
     public string InitialDescription { get; set; }
     public string Description { get; set; }

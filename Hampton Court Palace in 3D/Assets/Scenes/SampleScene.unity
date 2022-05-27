@@ -347,7 +347,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Name
+  m_text: Name Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1137,7 +1137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactUI: {fileID: 1995699066}
   focusUI: {fileID: 2028945342}
-  JSONObjectSlug: Old Barrel
+  JSONObjectSlug: old_barrel
 --- !u!1 &576418534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,6 +1333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 1874878107}
   scrollViewContent: {fileID: 994852451}
+  Dialogue: {fileID: 922821852}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1833,6 +1834,127 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 922821852}
   m_CullTransparentMesh: 1
+--- !u!1 &928850284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 928850289}
+  - component: {fileID: 928850288}
+  - component: {fileID: 928850287}
+  - component: {fileID: 928850286}
+  - component: {fileID: 928850285}
+  m_Layer: 0
+  m_Name: NPC Representative (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &928850285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928850284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9940ca96facaf4e8857e0cbb9f0962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Hi friend, help me please!
+  - I have lost all my barrels, the King will be furious.
+  - Please find one and bring it to me!
+  characterName: Richard Rich, The Lord Chancellor
+  portrait: {fileID: 21300000, guid: 32e5d01d96a43b948b2b30aa3aa2cb26, type: 3}
+  focusUI: {fileID: 2028945342}
+  JSONObjectSlug: richard_rich
+  quests: {fileID: 1022474523}
+  questType: FindObjects
+--- !u!136 &928850286
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928850284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!23 &928850287
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928850284}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &928850288
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928850284}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &928850289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928850284}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.05, y: 2.002, z: 9.58}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &946957475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1847,7 +1969,7 @@ GameObject:
   - component: {fileID: 946957477}
   - component: {fileID: 946957481}
   m_Layer: 0
-  m_Name: great_kitchens
+  m_Name: Great Kitchens
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1958,7 +2080,7 @@ GameObject:
   - component: {fileID: 956452072}
   - component: {fileID: 956452071}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Character_Name_Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2267,6 +2389,37 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!1 &1022474523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1022474524}
+  m_Layer: 0
+  m_Name: Quests
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1022474524
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022474523}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.161884, y: 3.175276, z: 5.677631}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 30
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1067990474
 GameObject:
   m_ObjectHideFlags: 0
@@ -4016,6 +4169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 922821852}
+  conversationActive: 0
   textSpeed: 0.05
   characterPortrait: {fileID: 0}
 --- !u!4 &1859588089
@@ -4025,14 +4179,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859588087}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.0071786763, y: -0, z: -0, w: 0.99997425}
   m_LocalPosition: {x: 528.8864, y: 172.35023, z: 3.4144993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 24
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.823, y: 0, z: 0}
 --- !u!1 &1874878106
 GameObject:
   m_ObjectHideFlags: 0
@@ -4092,7 +4246,7 @@ GameObject:
   - component: {fileID: 1900130951}
   - component: {fileID: 1900130950}
   - component: {fileID: 1900130949}
-  - component: {fileID: 1900130948}
+  - component: {fileID: 1900130953}
   m_Layer: 0
   m_Name: NPC Representative (1)
   m_TagString: Untagged
@@ -4100,24 +4254,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1900130948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900130947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 459cf8e674de92148965ed69b707acf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-  - I am the first Duke of Suffolk.
-  - I am a long time friend of King Henry and one of his most senior courtiers.
-  - I have been told to allow you access to every level of Hampton Court. Lucky you!
-  characterName: Charles Brandon, Duke of Suffolk
-  portrait: {fileID: 21300000, guid: 87cfe358b7c756f49ac6031ff22f5e01, type: 3}
 --- !u!136 &1900130949
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4197,6 +4333,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1900130953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900130947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff0b57588ee6aa45952c86077a600f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - I am the first Duke of Suffolk.
+  - I am a long time friend of King Henry and one of his most senior courtiers.
+  - I have been told to allow you access to every level of Hampton Court. Lucky you!
+  characterName: 
+  portrait: {fileID: 21300000, guid: 87cfe358b7c756f49ac6031ff22f5e01, type: 3}
+  spokenToDialogue: []
+  focusUI: {fileID: 2028945342}
+  JSONObjectSlug: duke_of_suffolk
 --- !u!1001 &1909812205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4268,7 +4425,7 @@ GameObject:
   - component: {fileID: 1987590481}
   - component: {fileID: 1987590485}
   m_Layer: 0
-  m_Name: NPC Representative
+  m_Name: William Paulet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4362,16 +4519,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1987590479}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 459cf8e674de92148965ed69b707acf9, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ff0b57588ee6aa45952c86077a600f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - Test
-  - The whole palace has heard of your arrival.
-  - Everyone is excited to meet you.
-  - Head through to base court to be shown to your room.
-  characterName: The Lord Steward, William Paulet, Baron St John
+  - I am William Paulet, Baron St John. But you shall refer to me as Lord Steward
+  - 'I am in charge of everything that happens at court below stairs. '
+  - I'm sure I'll see you around often! Head into base court to be shown to your
+    room.
+  characterName: The Lord Steward, William Paulet, 1st Baron St John
   portrait: {fileID: 21300000, guid: 481ff8302bdac5d4ab82508586ced328, type: 3}
+  spokenToDialogue:
+  - Base court is through the main gate behind me.
+  focusUI: {fileID: 2028945342}
+  JSONObjectSlug: lord_steward
 --- !u!1 &1992336709
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class Goal
 
     public virtual void Init()
     {
-        // default init stuff
+
     }
     public void Evaluate()
     {
@@ -20,13 +20,12 @@ public class Goal
         {
             Complete();
         }
-                
     }
 
     public void Complete()
     {
         Quest.CheckGoals();
-        Completed = true;
+        Quest.Completed = true;
         Debug.Log("Goal marked as complete");
     }
 }

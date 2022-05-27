@@ -11,16 +11,20 @@ public class Quests : MonoBehaviour
     public int ExperienceReward { get; set; }
     public Item ItemReward { get; set; }
     public bool Completed { get; set; }
+    
+    public string[] inProgressDialogue, rewardDialogue, completedDialogue;
 
     public void CheckGoals()
     {
         Completed = Goals.All(g => g.Completed);
-        if (Completed) GiveReward();
     }
 
-    void GiveReward()
+    public void GiveReward()
     {
-        Debug.Log("Well done for completing this task.");
+        if(ItemReward != null)
+        {
+            InventoryController.Instance.GiveItem(ItemReward);
+            Debug.Log("Well done for completing this task.");
+        }
     }
-
 }

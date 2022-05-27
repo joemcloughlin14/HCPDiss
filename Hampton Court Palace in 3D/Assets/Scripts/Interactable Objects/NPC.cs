@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class NPC : Interactable
 {
@@ -15,8 +16,7 @@ public class NPC : Interactable
 
     public override void OnInteract()
     {
-        Debug.Log("Interacting with NPC class");
-        DialogueManager.Instance.AddNewDialogue(dialogue, characterName, portrait);
+        
     }
 
     public override void OnLoseFocus()

@@ -10,13 +10,15 @@ public class DialogueManager : MonoBehaviour
     private bool canBeInteractedWith = true;
     public static DialogueManager Instance { get; set; }
     public GameObject dialoguePanel;
-    public float textSpeed;
-    private bool conversationActive;
+    
+    public bool conversationActive;
 
     string currentCharacterName;
+    TextMeshProUGUI dialogue, characterName;
+    public float textSpeed;
     List<string> currentDialogueLines = new List<string>();
 
-    TextMeshProUGUI dialogue, characterName;
+    
     int dialogueIndex;
     public Sprite characterPortrait;
     Sprite portrait;
@@ -24,12 +26,9 @@ public class DialogueManager : MonoBehaviour
 
     void Awake()
     {
-        var dialogueChild = dialoguePanel.transform.Find("DialogueText");
-        dialogue = dialogueChild.GetComponent<TextMeshProUGUI>();
-        var characterNameChild = dialoguePanel.transform.Find("Panel").transform.Find("NameText");
-        characterName = characterNameChild.GetComponent<TextMeshProUGUI>();
-        var characterPortraitChild = dialoguePanel.transform.Find("Portrait");
-        portrait = characterPortraitChild.GetComponent<Image>().sprite;
+        
+        //var characterPortraitChild = dialoguePanel.transform.Find("Portrait");
+        //portrait = characterPortraitChild.GetComponent<Image>().sprite;
 
         dialoguePanel.SetActive(false);
         conversationActive = false;
@@ -59,18 +58,26 @@ public class DialogueManager : MonoBehaviour
         {
             return;
         }
+        conversationActive = true;
+        dialoguePanel.SetActive(true);
         dialogueIndex = 0;
         this.currentDialogueLines = new List<string>(lines);
+        
         this.currentCharacterName = name;
-        dialoguePanel.SetActive(true);
-        conversationActive = true;
         this.characterPortrait = characterPortrait;
+
         dialoguePanel.transform.Find("Portrait").GetComponent<Image>().sprite = characterPortrait;
+
+        var dialogueChild = dialoguePanel.transform.Find("DialogueText");
+        dialogue = dialogueChild.GetComponent<TextMeshProUGUI>();
+
+        var characterNameChild = dialoguePanel.transform.Find("Character_Name_Panel").transform.Find("NameText");
+        characterName = characterNameChild.GetComponent<TextMeshProUGUI>();
+        Debug.Log(characterName);
     }
 
     public void ContinueDialogue()
     {
-        Debug.Log("the value of index is now: " + dialogueIndex);
         if(dialogueIndex < this.currentDialogueLines.Count)
         {
             this.dialogue.text = this.currentDialogueLines[dialogueIndex];
