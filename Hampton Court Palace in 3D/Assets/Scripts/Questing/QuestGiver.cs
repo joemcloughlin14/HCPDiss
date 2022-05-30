@@ -8,7 +8,6 @@ public class QuestGiver : NPC
     public bool AssignedQuest { get; set; }
     public bool Helped { get; set; }
     private bool canBeInteractedWith = true;
-    private bool isSpeakingTo = false;
     
     [SerializeField] private string JSONObjectSlug;         // this must be identical to the objectSlug in JSON file.
     private Item objectItem;
@@ -33,7 +32,7 @@ public class QuestGiver : NPC
 
         if (isSpeakingTo)
         {
-            focusUI.SetActive(false);
+            HideFocusUI();
         }
             if (!AssignedQuest && !Helped)
             {
@@ -52,12 +51,13 @@ public class QuestGiver : NPC
         if (!InventoryController.Instance.playerItems.Contains(objectItem))
         {
             InventoryController.Instance.GiveItem(objectItem);
+            interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectItem.ItemName + " has been added to the database. Press I to learn more.";
             interactUI.SetActive(true);
         }
         else
 
         {
-            interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectItem.ItemName + " has already been added to database.";
+            interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectItem.ItemName + " has already been added to the database.";
             interactUI.SetActive(true);
         }
     }
@@ -107,8 +107,9 @@ public class QuestGiver : NPC
 
     public override void OnLoseFocus()
     {
-        focusUI.SetActive(false);
-        interactUI.SetActive(false);
+        base.OnLoseFocus();
+        //focusUI.SetActive(false);
+        //interactUI.SetActive(false);
         isSpeakingTo = false;
     }
 }

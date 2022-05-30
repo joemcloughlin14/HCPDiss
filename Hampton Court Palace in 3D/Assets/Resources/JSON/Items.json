@@ -37,7 +37,7 @@
   {
     "objectSlug": "lord_steward",
     "itemName": "The Lord Steward",
-    "initialDescription": "-",
+    "initialDescription": "The Lord Steward added to database: Press I to read more.",
     "description": "Runs everything below stairs.",
     "itemType": "Character"
   },

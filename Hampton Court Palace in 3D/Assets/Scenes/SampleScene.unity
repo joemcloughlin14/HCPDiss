@@ -1138,6 +1138,141 @@ MonoBehaviour:
   interactUI: {fileID: 1995699066}
   focusUI: {fileID: 2028945342}
   JSONObjectSlug: old_barrel
+--- !u!1 &524647640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 524647641}
+  - component: {fileID: 524647643}
+  - component: {fileID: 524647642}
+  m_Layer: 5
+  m_Name: InteractPanelQuestText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &524647641
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524647640}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 696330965}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 440, y: 146}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &524647642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524647640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Character added to database. Press I to learn more.
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36.65
+  m_fontSizeBase: 55
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 65
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 10.528778, y: 10.325027, z: 9.886963, w: 10.287857}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &524647643
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524647640}
+  m_CullTransparentMesh: 1
 --- !u!1 &576418534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,6 +1409,96 @@ MonoBehaviour:
   interactUI: {fileID: 1995699066}
   focusUI: {fileID: 2028945342}
   JSONObjectSlug: Cart
+--- !u!1 &696330964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 696330965}
+  - component: {fileID: 696330967}
+  - component: {fileID: 696330966}
+  - component: {fileID: 696330968}
+  m_Layer: 5
+  m_Name: InteractPanel - QuestGiver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &696330965
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696330964}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 524647641}
+  m_Father: {fileID: 1483637973}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 660.47, y: 635}
+  m_SizeDelta: {x: 440.99, y: 152.75}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &696330966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696330964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.4}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &696330967
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696330964}
+  m_CullTransparentMesh: 1
+--- !u!225 &696330968
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696330964}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &696720487
 GameObject:
   m_ObjectHideFlags: 0
@@ -1789,7 +2014,7 @@ RectTransform:
   - {fileID: 956452070}
   - {fileID: 814371545}
   m_Father: {fileID: 1483637973}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -1872,9 +2097,14 @@ MonoBehaviour:
   - Please find one and bring it to me!
   characterName: The Lord Chancellor, Richard Rich
   portrait: {fileID: 21300000, guid: 32e5d01d96a43b948b2b30aa3aa2cb26, type: 3}
-  interactUI: {fileID: 1748304890}
+  interactUI: {fileID: 696330964}
   focusUI: {fileID: 2028945342}
-  JSONObjectSlug: 
+  focusUIGroup: {fileID: 2028945346}
+  interactUIGroup: {fileID: 696330968}
+  fadeOutFocus: 0
+  fadeOutInteract: 0
+  isSpeakingTo: 0
+  JSONObjectSlug: richard_rich
   quests: {fileID: 1022474523}
   questType: FindObjects
 --- !u!136 &928850286
@@ -3437,7 +3667,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38.65
+  m_fontSize: 39.85
   m_fontSizeBase: 29.3
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3473,7 +3703,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -98.94925, y: -35.36095, z: -101.66748, w: -39.178223}
+  m_margin: {x: -108.522446, y: -38.552048, z: -104.85846, w: -41.57157}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3583,6 +3813,7 @@ RectTransform:
   - {fileID: 2028945343}
   - {fileID: 1995699067}
   - {fileID: 1748304891}
+  - {fileID: 696330965}
   - {fileID: 922821853}
   - {fileID: 1874878107}
   m_Father: {fileID: 0}
@@ -3964,13 +4195,14 @@ GameObject:
   - component: {fileID: 1748304891}
   - component: {fileID: 1748304893}
   - component: {fileID: 1748304892}
+  - component: {fileID: 1748304894}
   m_Layer: 5
   m_Name: InteractPanel - Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1748304891
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4030,6 +4262,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748304890}
   m_CullTransparentMesh: 1
+--- !u!225 &1748304894
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748304890}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1778778299
 GameObject:
   m_ObjectHideFlags: 0
@@ -4297,7 +4541,7 @@ RectTransform:
   - {fileID: 53541193}
   - {fileID: 1781103428}
   m_Father: {fileID: 1483637973}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.040645834, y: 0.07977543}
   m_AnchorMax: {x: 0.9593542, y: 0.9134211}
@@ -4461,7 +4705,7 @@ GameObject:
   - component: {fileID: 1900130949}
   - component: {fileID: 1900130953}
   m_Layer: 0
-  m_Name: Duke of Suffolk
+  m_Name: The Duke of Suffolk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4562,11 +4806,17 @@ MonoBehaviour:
   - I am the first Duke of Suffolk.
   - I am a long time friend of King Henry and one of his most senior courtiers.
   - I have been told to allow you access to every level of Hampton Court. Lucky you!
-  characterName: Charles Brand, The Duke of Suffolk
+  characterName: Charles Brandon, The Duke of Suffolk
   portrait: {fileID: 21300000, guid: 87cfe358b7c756f49ac6031ff22f5e01, type: 3}
   interactUI: {fileID: 1748304890}
   focusUI: {fileID: 2028945342}
-  spokenToDialogue: []
+  focusUIGroup: {fileID: 2028945346}
+  interactUIGroup: {fileID: 1748304894}
+  fadeOutFocus: 0
+  fadeOutInteract: 0
+  isSpeakingTo: 0
+  spokenToDialogue:
+  - Well go on then, go and explore before the King changes his mind!
   JSONObjectSlug: duke_of_suffolk
 --- !u!1001 &1909812205
 PrefabInstance:
@@ -4639,7 +4889,7 @@ GameObject:
   - component: {fileID: 1987590481}
   - component: {fileID: 1987590485}
   m_Layer: 0
-  m_Name: William Paulet
+  m_Name: The Lord Steward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4745,6 +4995,11 @@ MonoBehaviour:
   portrait: {fileID: 21300000, guid: 481ff8302bdac5d4ab82508586ced328, type: 3}
   interactUI: {fileID: 1748304890}
   focusUI: {fileID: 2028945342}
+  focusUIGroup: {fileID: 2028945346}
+  interactUIGroup: {fileID: 1748304894}
+  fadeOutFocus: 0
+  fadeOutInteract: 0
+  isSpeakingTo: 0
   spokenToDialogue:
   - Base court is through the main gate behind me.
   JSONObjectSlug: lord_steward
@@ -4835,13 +5090,14 @@ GameObject:
   - component: {fileID: 1995699067}
   - component: {fileID: 1995699069}
   - component: {fileID: 1995699068}
+  - component: {fileID: 1995699070}
   m_Layer: 5
   m_Name: InteractPanel - Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1995699067
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4901,6 +5157,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995699066}
   m_CullTransparentMesh: 1
+--- !u!225 &1995699070
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995699066}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1998474203
 GameObject:
   m_ObjectHideFlags: 0
@@ -5182,6 +5450,7 @@ GameObject:
   - component: {fileID: 2028945343}
   - component: {fileID: 2028945345}
   - component: {fileID: 2028945344}
+  - component: {fileID: 2028945346}
   m_Layer: 5
   m_Name: FocusPanel
   m_TagString: Untagged
@@ -5248,6 +5517,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028945342}
   m_CullTransparentMesh: 1
+--- !u!225 &2028945346
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028945342}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &2071569204
 PrefabInstance:
   m_ObjectHideFlags: 0
