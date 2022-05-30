@@ -8,19 +8,21 @@ public class NPC : Interactable
     public string[] dialogue;
     public string characterName;
     public Sprite portrait;
+    public GameObject interactUI;
+    public GameObject focusUI;
 
     public override void OnFocus()
     {
-        
+
     }
 
     public override void OnInteract()
     {
-        
+       
     }
 
     public override void OnLoseFocus()
     {
-       
+
     }
 }

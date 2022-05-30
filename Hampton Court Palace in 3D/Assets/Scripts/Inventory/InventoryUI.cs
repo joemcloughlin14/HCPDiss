@@ -35,6 +35,10 @@ public class InventoryUI : MonoBehaviour
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+                
+            }
+            if(!menuIsActive && DialogueManager.Instance.conversationActive)
+            {
                 Dialogue.gameObject.SetActive(true);
             }
         }

@@ -7,34 +7,29 @@ public class NonQuestNPC : NPC
 {
     bool hasSpokenTo;
     public string[] spokenToDialogue;
-
-    public GameObject focusUI;
+    private Item objectItem;
     private bool canBeInteractedWith = true;
     private bool isSpeakingTo = false;
     [SerializeField] private string JSONObjectSlug;         // this must be identical to the objectSlug in JSON file.
-    private Item objectItem;
 
     private void Start()
     {
         hasSpokenTo = false;
         focusUI.SetActive(false);
+        interactUI.SetActive(false);
         objectItem = ItemDatabase.Instance.GetItem(JSONObjectSlug);
     }
 
     public override void OnInteract()
     {
         base.OnInteract();
-        
-        if (hasSpokenTo)
+        isSpeakingTo = true;
+
+        if (isSpeakingTo)
         {
-            DialogueManager.Instance.AddNewDialogue(spokenToDialogue, characterName, portrait);
-            hasSpokenTo = true;
+            focusUI.SetActive(false);
         }
-        else
-        {
-            DialogueManager.Instance.AddNewDialogue(dialogue, characterName, portrait);
-            Debug.Log("Name is " + characterName);
-        }
+        CheckInteract();
     }
 
     public override void OnFocus()
@@ -54,6 +49,31 @@ public class NonQuestNPC : NPC
     public override void OnLoseFocus()
     {
         focusUI.SetActive(false);
+        interactUI.SetActive(false);
         isSpeakingTo = false;
+    }
+
+    private void CheckInteract()
+    {
+        if (InventoryController.Instance.playerItems.Contains(objectItem))
+        {
+            hasSpokenTo = true;
+            InventoryController.Instance.GiveItem(objectItem);
+            interactUI.SetActive(true);
+            if (hasSpokenTo)
+            {
+                DialogueManager.Instance.AddNewDialogue(spokenToDialogue, characterName, portrait);     // to sort
+                Debug.Log("hasSpokenTo");
+            }
+            else
+            {
+                DialogueManager.Instance.AddNewDialogue(dialogue, characterName, portrait);
+            }
+        }
+        else
+        {
+            interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectItem.ItemName + " has already been added to database.";
+            interactUI.SetActive(true);
+        }
     }
 }

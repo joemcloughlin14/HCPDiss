@@ -23,14 +23,14 @@
   {
     "objectSlug": "old_barrel",
     "itemName": "Old Barrel",
-    "initialDescription": "Item Added to Database: A plain old barrel. Once stored wine. Press I to read more.",
+    "initialDescription": "Wine barrel added to database: Press I to read more.",
     "description": "Henry VIII had vast stores of wine and beer for his court. A barrel just like this would have been kept in the cellar under the Great Hall to keep it at a suitably cool temperature.",
     "itemType": "Quest"
   },
   {
     "objectSlug": "duke_of_suffolk",
     "itemName": "The Duke of Suffolk",
-    "initialDescription": "-",
+    "initialDescription": "The Duke of Suffolk added to database: Press I to read more.",
     "description": "A great friend of the king.",
     "itemType": "Character"
   },

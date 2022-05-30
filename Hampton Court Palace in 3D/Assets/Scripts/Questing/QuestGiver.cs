@@ -7,13 +7,11 @@ public class QuestGiver : NPC
 {
     public bool AssignedQuest { get; set; }
     public bool Helped { get; set; }
-    //private bool isCurrentlyInteracted = false;
-    public GameObject focusUI;
     private bool canBeInteractedWith = true;
     private bool isSpeakingTo = false;
+    
     [SerializeField] private string JSONObjectSlug;         // this must be identical to the objectSlug in JSON file.
     private Item objectItem;
-
     [SerializeField]
     private GameObject quests;
     [SerializeField]
@@ -23,30 +21,45 @@ public class QuestGiver : NPC
     private void Start()
     {
         focusUI.SetActive(false);
+        interactUI.SetActive(false);
         objectItem = ItemDatabase.Instance.GetItem(JSONObjectSlug);
     }
 
     public override void OnInteract()
     {
-            base.OnInteract();
-        isSpeakingTo = true;        // sort this.
+        base.OnInteract();
+        isSpeakingTo = true;
+        interactUI.SetActive(true);
+
+        if (isSpeakingTo)
+        {
+            focusUI.SetActive(false);
+        }
             if (!AssignedQuest && !Helped)
             {
                 DialogueManager.Instance.AddNewDialogue(dialogue, characterName, portrait);
                 AssignQuest();
-                Debug.Log("characterName is also " + characterName);
-            Debug.Log("name is " + name);
             }
             else if (AssignedQuest && !Helped)
             {
-                Debug.Log(Quest.Completed);
                 checkQuest();
             }
             else
             {
-                Debug.Log("PASSED ALL CHECKS.");
                 DialogueManager.Instance.AddNewDialogue(Quest.completedDialogue, characterName, portrait);
             }
+ 
+        if (!InventoryController.Instance.playerItems.Contains(objectItem))
+        {
+            InventoryController.Instance.GiveItem(objectItem);
+            interactUI.SetActive(true);
+        }
+        else
+
+        {
+            interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectItem.ItemName + " has already been added to database.";
+            interactUI.SetActive(true);
+        }
     }
 
     void AssignQuest()
@@ -57,10 +70,8 @@ public class QuestGiver : NPC
 
     void checkQuest()
     {
-        Debug.Log(Quest.Completed + " at this point.");
         if (Quest.Completed)
         {
-            Debug.Log("Quest complete");
             Quest.GiveReward();
             AssignedQuest = false;
             Helped = true;
@@ -70,7 +81,6 @@ public class QuestGiver : NPC
         }
         else
         {
-            Debug.Log("Not complete");
             DialogueManager.Instance.AddNewDialogue(Quest.inProgressDialogue, characterName, portrait);
         }
     }
@@ -98,6 +108,7 @@ public class QuestGiver : NPC
     public override void OnLoseFocus()
     {
         focusUI.SetActive(false);
+        interactUI.SetActive(false);
         isSpeakingTo = false;
     }
 }

@@ -17,18 +17,22 @@ public class DialogueManager : MonoBehaviour
     TextMeshProUGUI dialogue, characterName;
     public float textSpeed;
     List<string> currentDialogueLines = new List<string>();
-
     
     int dialogueIndex;
-    public Sprite characterPortrait;
     Sprite portrait;
 
 
     void Awake()
     {
+        var dialogueChild = dialoguePanel.transform.Find("DialogueText");
+        dialogue = dialogueChild.GetComponent<TextMeshProUGUI>();
         
+        //var characterNameChild = dialoguePanel.transform.Find("Character_Name_Panel").transform.Find("NameText");
+        //characterName = characterNameChild.GetComponent<TextMeshProUGUI>();
+
         //var characterPortraitChild = dialoguePanel.transform.Find("Portrait");
         //portrait = characterPortraitChild.GetComponent<Image>().sprite;
+
 
         dialoguePanel.SetActive(false);
         conversationActive = false;
@@ -62,18 +66,9 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(true);
         dialogueIndex = 0;
         this.currentDialogueLines = new List<string>(lines);
-        
-        this.currentCharacterName = name;
-        this.characterPortrait = characterPortrait;
 
         dialoguePanel.transform.Find("Portrait").GetComponent<Image>().sprite = characterPortrait;
-
-        var dialogueChild = dialoguePanel.transform.Find("DialogueText");
-        dialogue = dialogueChild.GetComponent<TextMeshProUGUI>();
-
-        var characterNameChild = dialoguePanel.transform.Find("Character_Name_Panel").transform.Find("NameText");
-        characterName = characterNameChild.GetComponent<TextMeshProUGUI>();
-        Debug.Log(characterName);
+        dialoguePanel.transform.Find("Character_Name_Panel").transform.Find("NameText").GetComponent<TextMeshProUGUI>().text = name;
     }
 
     public void ContinueDialogue()

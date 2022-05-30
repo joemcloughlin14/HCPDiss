@@ -19,8 +19,6 @@ public class InventoryController : MonoBehaviour
         {
             Instance = this;
         }
-
-        //GiveItem("sword");
     }
 
     public void GiveItem(string itemSlug)

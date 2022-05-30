@@ -24,7 +24,6 @@ public class Quests : MonoBehaviour
         if(ItemReward != null)
         {
             InventoryController.Instance.GiveItem(ItemReward);
-            Debug.Log("Well done for completing this task.");
         }
     }
 }
