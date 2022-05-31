@@ -11,5 +11,4 @@ public class UIEventHandler : MonoBehaviour
     {
         OnItemAddedToInventory(item);
     }
-
 }
