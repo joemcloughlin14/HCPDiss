@@ -18,14 +18,14 @@ public class Goal
     {
         if(CurrentAmount >= RequiredAmount)
         {
-            Complete();
+            checkIfComplete();
         }
     }
 
-    public void Complete()
+    public void checkIfComplete()
     {
+        Completed = true;
         Quest.CheckGoals();
-        Quest.Completed = true;
         Debug.Log("Goal marked as complete");
     }
 }

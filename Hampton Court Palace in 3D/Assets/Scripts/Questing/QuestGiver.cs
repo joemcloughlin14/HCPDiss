@@ -7,10 +7,6 @@ public class QuestGiver : NPC
 {
     public bool AssignedQuest { get; set; }
     public bool Helped { get; set; }
-    private bool canBeInteractedWith = true;
-    
-    [SerializeField] private string JSONObjectSlug;         // this must be identical to the objectSlug in JSON file.
-    private Item objectItem;
     [SerializeField]
     private GameObject quests;
     [SerializeField]
@@ -34,19 +30,30 @@ public class QuestGiver : NPC
         {
             HideFocusUI();
         }
-            if (!AssignedQuest && !Helped)
+
+        if (!AssignedQuest && !Helped)
+        {
+            AssignQuest();
+            if (!Quest.Completed)
             {
                 DialogueManager.Instance.AddNewDialogue(dialogue, characterName, portrait);
-                AssignQuest();
-            }
-            else if (AssignedQuest && !Helped)
-            {
-                checkQuest();
             }
             else
             {
-                DialogueManager.Instance.AddNewDialogue(Quest.completedDialogue, characterName, portrait);
+                DialogueManager.Instance.AddNewDialogue(Quest.completedAlreadyDialogue, characterName, portrait);
+                Helped = true;
+                return;
             }
+            
+        }
+        else if (AssignedQuest && !Helped)
+        {
+            checkQuest();
+        }
+        else
+        {
+            DialogueManager.Instance.AddNewDialogue(Quest.completedDialogue, characterName, portrait);
+        }
  
         if (!InventoryController.Instance.playerItems.Contains(objectItem))
         {
@@ -66,6 +73,7 @@ public class QuestGiver : NPC
     {
         AssignedQuest = true;
         Quest = (Quests)quests.AddComponent(System.Type.GetType(questType));
+
     }
 
     void checkQuest()
@@ -108,8 +116,6 @@ public class QuestGiver : NPC
     public override void OnLoseFocus()
     {
         base.OnLoseFocus();
-        //focusUI.SetActive(false);
-        //interactUI.SetActive(false);
         isSpeakingTo = false;
     }
 }

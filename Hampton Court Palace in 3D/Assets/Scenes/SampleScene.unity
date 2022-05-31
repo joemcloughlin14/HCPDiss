@@ -1137,6 +1137,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactUI: {fileID: 1995699066}
   focusUI: {fileID: 2028945342}
+  dialogue: []
+  characterName: 
+  portrait: {fileID: 0}
+  isSpeakingTo: 0
+  hasSpokenTo: 0
+  spokenToDialogue: []
+  canBeInteractedWith: 1
+  focusUIGroup: {fileID: 2028945346}
+  interactUIGroup: {fileID: 1995699070}
+  fadeOutFocus: 0
+  fadeOutInteract: 0
   JSONObjectSlug: old_barrel
 --- !u!1 &524647640
 GameObject:
@@ -1408,6 +1419,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactUI: {fileID: 1995699066}
   focusUI: {fileID: 2028945342}
+  dialogue: []
+  characterName: 
+  portrait: {fileID: 0}
+  isSpeakingTo: 0
+  hasSpokenTo: 0
+  spokenToDialogue: []
+  canBeInteractedWith: 1
+  focusUIGroup: {fileID: 0}
+  interactUIGroup: {fileID: 0}
+  fadeOutFocus: 0
+  fadeOutInteract: 0
   JSONObjectSlug: Cart
 --- !u!1 &696330964
 GameObject:
@@ -2091,19 +2113,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9940ca96facaf4e8857e0cbb9f0962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactUI: {fileID: 696330964}
+  focusUI: {fileID: 2028945342}
   dialogue:
   - Hi friend, help me please!
   - I have lost all my barrels, the King will be furious.
   - Please find one and bring it to me!
   characterName: The Lord Chancellor, Richard Rich
   portrait: {fileID: 21300000, guid: 32e5d01d96a43b948b2b30aa3aa2cb26, type: 3}
-  interactUI: {fileID: 696330964}
-  focusUI: {fileID: 2028945342}
+  isSpeakingTo: 0
+  hasSpokenTo: 0
+  spokenToDialogue: []
+  canBeInteractedWith: 1
   focusUIGroup: {fileID: 2028945346}
   interactUIGroup: {fileID: 696330968}
   fadeOutFocus: 0
   fadeOutInteract: 0
-  isSpeakingTo: 0
   JSONObjectSlug: richard_rich
   quests: {fileID: 1022474523}
   questType: FindObjects
@@ -2298,6 +2323,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactUI: {fileID: 1995699066}
   focusUI: {fileID: 2028945342}
+  dialogue: []
+  characterName: 
+  portrait: {fileID: 0}
+  isSpeakingTo: 0
+  hasSpokenTo: 0
+  spokenToDialogue: []
+  canBeInteractedWith: 1
+  focusUIGroup: {fileID: 2028945346}
+  interactUIGroup: {fileID: 1995699070}
+  fadeOutFocus: 0
+  fadeOutInteract: 0
   JSONObjectSlug: great_kitchens
 --- !u!1 &956452069
 GameObject:
@@ -3858,6 +3894,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactUI: {fileID: 1995699066}
   focusUI: {fileID: 2028945342}
+  dialogue: []
+  characterName: 
+  portrait: {fileID: 0}
+  isSpeakingTo: 0
+  hasSpokenTo: 0
+  spokenToDialogue: []
+  canBeInteractedWith: 1
+  focusUIGroup: {fileID: 2028945346}
+  interactUIGroup: {fileID: 1995699070}
+  fadeOutFocus: 0
+  fadeOutInteract: 0
   JSONObjectSlug: story_of_abraham_tapestries
 --- !u!65 &1496352773
 BoxCollider:
@@ -4086,6 +4133,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactUI: {fileID: 1995699066}
   focusUI: {fileID: 2028945342}
+  dialogue: []
+  characterName: 
+  portrait: {fileID: 0}
+  isSpeakingTo: 0
+  hasSpokenTo: 0
+  spokenToDialogue: []
+  canBeInteractedWith: 1
+  focusUIGroup: {fileID: 0}
+  interactUIGroup: {fileID: 0}
+  fadeOutFocus: 0
+  fadeOutInteract: 0
   JSONObjectSlug: Old Barrel
 --- !u!1 &1740322243
 GameObject:
@@ -4525,7 +4583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1874878107
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4543,10 +4601,10 @@ RectTransform:
   m_Father: {fileID: 1483637973}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.040645834, y: 0.07977543}
-  m_AnchorMax: {x: 0.9593542, y: 0.9134211}
-  m_AnchoredPosition: {x: 0, y: 3.5}
-  m_SizeDelta: {x: -2, y: 11.000015}
+  m_AnchorMin: {x: 0.040645834, y: 0.07575794}
+  m_AnchorMax: {x: 0.3442501, y: 0.9134211}
+  m_AnchoredPosition: {x: 590, y: 6}
+  m_SizeDelta: {x: 1178, y: 6.0000153}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1874878109
 CanvasRenderer:
@@ -4802,21 +4860,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff0b57588ee6aa45952c86077a600f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactUI: {fileID: 1748304890}
+  focusUI: {fileID: 2028945342}
   dialogue:
   - I am the first Duke of Suffolk.
   - I am a long time friend of King Henry and one of his most senior courtiers.
   - I have been told to allow you access to every level of Hampton Court. Lucky you!
   characterName: Charles Brandon, The Duke of Suffolk
   portrait: {fileID: 21300000, guid: 87cfe358b7c756f49ac6031ff22f5e01, type: 3}
-  interactUI: {fileID: 1748304890}
-  focusUI: {fileID: 2028945342}
+  isSpeakingTo: 0
+  hasSpokenTo: 0
+  spokenToDialogue:
+  - Well go on then, go and explore before the King changes his mind!
+  canBeInteractedWith: 1
   focusUIGroup: {fileID: 2028945346}
   interactUIGroup: {fileID: 1748304894}
   fadeOutFocus: 0
   fadeOutInteract: 0
-  isSpeakingTo: 0
-  spokenToDialogue:
-  - Well go on then, go and explore before the King changes his mind!
   JSONObjectSlug: duke_of_suffolk
 --- !u!1001 &1909812205
 PrefabInstance:
@@ -4986,6 +5046,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff0b57588ee6aa45952c86077a600f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactUI: {fileID: 1748304890}
+  focusUI: {fileID: 2028945342}
   dialogue:
   - I am William Paulet, Baron St John. But you shall refer to me as Lord Steward
   - 'I am in charge of everything that happens at court below stairs. '
@@ -4993,15 +5055,15 @@ MonoBehaviour:
     room.
   characterName: The Lord Steward, William Paulet, Baron St John
   portrait: {fileID: 21300000, guid: 481ff8302bdac5d4ab82508586ced328, type: 3}
-  interactUI: {fileID: 1748304890}
-  focusUI: {fileID: 2028945342}
+  isSpeakingTo: 0
+  hasSpokenTo: 0
+  spokenToDialogue:
+  - Base court is through the main gate behind me.
+  canBeInteractedWith: 1
   focusUIGroup: {fileID: 2028945346}
   interactUIGroup: {fileID: 1748304894}
   fadeOutFocus: 0
   fadeOutInteract: 0
-  isSpeakingTo: 0
-  spokenToDialogue:
-  - Base court is through the main gate behind me.
   JSONObjectSlug: lord_steward
 --- !u!1 &1992336709
 GameObject:
@@ -5037,7 +5099,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.99999964}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5097,7 +5159,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1995699067
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5116,7 +5178,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 660.47, y: 796.14}
+  m_AnchoredPosition: {x: 660.47, y: 635}
   m_SizeDelta: {x: 440.99, y: 152.75}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1995699068
@@ -5626,9 +5688,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2074096802
 MonoBehaviour:
@@ -5779,6 +5841,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6067da0692b47af4f9c28d156519d9c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactUI: {fileID: 0}
+  focusUI: {fileID: 0}
+  dialogue: []
+  characterName: 
+  portrait: {fileID: 0}
+  isSpeakingTo: 0
+  hasSpokenTo: 0
+  spokenToDialogue: []
+  canBeInteractedWith: 1
+  focusUIGroup: {fileID: 0}
+  interactUIGroup: {fileID: 0}
+  fadeOutFocus: 0
+  fadeOutInteract: 0
+  JSONObjectSlug: 
 --- !u!65 &3469287838647989836
 BoxCollider:
   m_ObjectHideFlags: 0

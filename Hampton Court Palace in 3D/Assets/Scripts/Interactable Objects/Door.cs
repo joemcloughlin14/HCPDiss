@@ -5,7 +5,6 @@ using UnityEngine;
 public class Door : Interactable
 {
     private bool isOpen = false;
-    private bool canBeInteractedWith = true;
     private Animator anim;
 
     private void Start()

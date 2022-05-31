@@ -12,7 +12,7 @@ public class Quests : MonoBehaviour
     public Item ItemReward { get; set; }
     public bool Completed { get; set; }
     
-    public string[] inProgressDialogue, rewardDialogue, completedDialogue;
+    public string[] inProgressDialogue, rewardDialogue, completedDialogue, completedAlreadyDialogue;
 
     public void CheckGoals()
     {

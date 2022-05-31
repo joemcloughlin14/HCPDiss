@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FindObjects : Quests
 {
-    void Start()
+    void Awake()
     {
         Debug.Log("Find one barrel and one Great Kitchens.");
         QuestName = "Object Finder";
@@ -15,6 +15,11 @@ public class FindObjects : Quests
         Goals.Add(new CollectionGoal(this, "great_kitchens", "Find 1 great kitchens", false, 0, 1));
 
         Goals.ForEach(g => g.Init());
+
+        completedAlreadyDialogue = new string[]
+        {
+            "How did you know I wanted these? Well...thank you, friend."
+        };
 
         inProgressDialogue = new string[]
         {

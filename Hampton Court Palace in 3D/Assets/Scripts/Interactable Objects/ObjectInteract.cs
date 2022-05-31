@@ -6,12 +6,7 @@ using TMPro;
 
 public class ObjectInteract : Interactable
 {
-    public GameObject interactUI;
-    public GameObject focusUI;
-    private bool canBeInteractedWith = true;
     private bool isCurrentlyInteracted = false;
-    [SerializeField] private string JSONObjectSlug;         // this must be identical to the objectSlug in JSON file.
-    private Item objectItem;
 
     private void Start()
     {
@@ -22,9 +17,9 @@ public class ObjectInteract : Interactable
 
     public override void OnFocus()
     {
+        base.OnFocus();
         if (canBeInteractedWith && !isCurrentlyInteracted)
         {
-            focusUI.SetActive(true);
             focusUI.transform.GetChild(0).GetComponent<TMP_Text>().text = "Noteworthy Item: " + objectItem.ItemName + " - Click to add to database.";
             interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectItem.InitialDescription;
         }
@@ -36,19 +31,18 @@ public class ObjectInteract : Interactable
 
     public override void OnInteract()
     {
+        base.OnInteract();
+        CheckInteract();
         if (canBeInteractedWith)
         {
             isCurrentlyInteracted = true;
-            interactUI.SetActive(!interactUI.activeSelf);
-            focusUI.SetActive(false);
             InventoryController.Instance.GiveItem(objectItem);
         }
     }
 
     public override void OnLoseFocus()
     {
-        interactUI.SetActive(false);
-        focusUI.SetActive(false);
+        base.OnLoseFocus();
         isCurrentlyInteracted = false;
     }
 }

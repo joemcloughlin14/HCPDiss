@@ -20,6 +20,11 @@ public class CollectionGoal : Goal
     {
         base.Init();
         UIEventHandler.OnItemAddedToInventory += ItemPickedUp;
+        if (InventoryController.Instance.playerItems.Contains(ItemDatabase.Instance.GetItem(ItemID)))
+        {
+            this.CurrentAmount++;
+            Evaluate();
+        }
     }
 
     void ItemPickedUp(Item item)
