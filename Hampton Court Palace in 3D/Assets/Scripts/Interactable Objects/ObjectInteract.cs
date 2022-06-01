@@ -34,11 +34,12 @@ public class ObjectInteract : Interactable
     public override void OnInteract()
     {
         base.OnInteract();
-        CheckItemInteract();
+        
         if (canBeInteractedWith)
         {
+            CheckItemInteract();
             isCurrentlyInteracted = true;
-            InventoryController.Instance.GiveItem(objectItem);
+            //InventoryController.Instance.GiveItem(objectItem);
         }
     }
 

@@ -29,5 +29,4 @@ public class InventoryUIDetails : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-
 }

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
-    public RectTransform InventoryPanel;
+    public RectTransform inventoryPanel;
     public RectTransform itemScrollViewContent;
     public RectTransform characterScrollViewContent;
     public GameObject Dialogue;
+    public RectTransform ButtonsPanel;
     InventoryUIItem itemContainer { get; set; }
     InventoryUICharacter characterContainer { get; set; }
     bool menuIsActive { get; set; }
@@ -20,7 +21,8 @@ public class InventoryUI : MonoBehaviour
         itemContainer = Resources.Load<InventoryUIItem>("UI/Item_Container");
         UIEventHandler.OnItemAddedToInventory += ItemAdded;
         UIEventHandler.OnCharacterAddedToInventory += CharacterAdded;
-        InventoryPanel.gameObject.SetActive(false);
+        inventoryPanel.gameObject.SetActive(false);
+        ButtonsPanel.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -28,13 +30,17 @@ public class InventoryUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             menuIsActive = !menuIsActive;
-            
-            InventoryPanel.gameObject.SetActive(menuIsActive);
+
+            ButtonsPanel.gameObject.SetActive(menuIsActive);
+            characterScrollViewContent.gameObject.SetActive(false);
+            itemScrollViewContent.gameObject.SetActive(menuIsActive);
+            inventoryPanel.gameObject.SetActive(false);
             if (menuIsActive)
             {
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 Dialogue.gameObject.SetActive(false);
+                
             }
             else
             {

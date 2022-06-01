@@ -29,6 +29,7 @@ public class InventoryUICharacter : MonoBehaviour
     public void OnSelectCharacterButton()
     {
         InventoryController.Instance.SetCharacterDetails(character, GetComponent<Button>());
+        Debug.Log("Button works");
     }
 
 }

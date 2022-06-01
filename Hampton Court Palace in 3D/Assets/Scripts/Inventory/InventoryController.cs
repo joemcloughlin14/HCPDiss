@@ -7,7 +7,7 @@ public class InventoryController : MonoBehaviour
 {
     public static InventoryController Instance { get; set; }
     public InventoryUIDetails inventoryDetailsPanel;
-    public InventoryUIDetailsCh inventoryDetailsChpanel;
+    public InventoryUIDetailsCh inventoryDetailsChPanel;
     public List<Item> databaseItems = new List<Item>();
     public List<Character> databaseCharacters = new List<Character>();
     public List<Quests> currentQuests = new List<Quests>();
@@ -69,8 +69,8 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-    public void SetCharacterDetails(Character character, Button selectedButton)
+    public void SetCharacterDetails(Character character, Button selectButton)
     {
-        inventoryDetailsChpanel.SetCharacter(character, selectedButton);
+        inventoryDetailsChPanel.SetCharacter(character, selectButton);
     }
 }
