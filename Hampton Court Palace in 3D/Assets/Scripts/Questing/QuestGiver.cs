@@ -54,19 +54,6 @@ public class QuestGiver : CharacterInteract
         {
             DialogueManager.Instance.AddNewDialogue(Quest.completedDialogue, characterName, portrait);
         }
- 
-        if (!InventoryController.Instance.databaseCharacters.Contains(objectCharacter))
-        {
-            InventoryController.Instance.GiveCharacter(objectCharacter);
-            interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectCharacter.CharacterName + " has been added to the database. Press I to learn more.";
-            interactUI.SetActive(true);
-        }
-        else
-
-        {
-            interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectCharacter.CharacterName + " has already been added to the database.";
-            interactUI.SetActive(true);
-        }
     }
 
     void AssignQuest()

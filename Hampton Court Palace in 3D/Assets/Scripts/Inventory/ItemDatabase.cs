@@ -43,7 +43,7 @@ public class ItemDatabase : MonoBehaviour
         {
             if (character.CharacterSlug == characterSlug)
                 return character;
-            Debug.Log("Found character: " + characterSlug);
+            //Debug.Log("Found character: " + characterSlug);
         }
         Debug.LogWarning("Couldn't find character: " + characterSlug);
         return null;

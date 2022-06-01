@@ -27,13 +27,21 @@ public class CharacterInteract : Interactable
 
     public override void OnInteract()
     {
-        isSpeakingTo = true;
-        CheckCharacterInteract();
         if (canBeInteractedWith)
         {
+            CheckCharacterInteract();
             isCurrentlyInteracted = true;
-            InventoryController.Instance.GiveCharacter(objectCharacter);
+            //InventoryController.Instance.GiveCharacter(objectCharacter);
+            if (hasSpokenTo && InventoryController.Instance.databaseCharacters.Contains(objectCharacter))
+            {
+                DialogueManager.Instance.AddNewDialogue(spokenToDialogue, characterName, portrait);
+                interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectCharacter.CharacterName + " has already been added to the database.";
+                interactUI.SetActive(true);
+                Debug.Log("Got to this point.");
+            }
         }
+
+        isSpeakingTo = true;
         if (isSpeakingTo)
         {
             HideFocusUI();
@@ -44,6 +52,7 @@ public class CharacterInteract : Interactable
     public override void OnLoseFocus()
     {
         base.OnLoseFocus();
+        isCurrentlyInteracted = false;
     }
 
     public void CheckCharacterInteract()
@@ -59,13 +68,6 @@ public class CharacterInteract : Interactable
         else
         {
             hasSpokenTo = true;
-        }
-
-        if (hasSpokenTo && InventoryController.Instance.databaseCharacters.Contains(objectCharacter))
-        {
-            DialogueManager.Instance.AddNewDialogue(spokenToDialogue, characterName, portrait);
-            interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectCharacter.CharacterName + " has already been added to the database.";
-            interactUI.SetActive(true);
         }
     }
 }
