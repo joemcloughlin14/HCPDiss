@@ -24,11 +24,10 @@ public class InventoryUIDetails : MonoBehaviour
         selectedItemButton = selectedButton;
         itemNameText.text = item.ItemName;
         itemDescriptionText.text = item.Description;
-        
     }
-
     public void RemoveItem()
     {
         gameObject.SetActive(false);
     }
+
 }

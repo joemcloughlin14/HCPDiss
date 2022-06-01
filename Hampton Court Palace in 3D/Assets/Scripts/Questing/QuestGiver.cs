@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class QuestGiver : NPC
+public class QuestGiver : CharacterInteract
 {
     public bool AssignedQuest { get; set; }
     public bool Helped { get; set; }
@@ -17,7 +17,7 @@ public class QuestGiver : NPC
     {
         focusUI.SetActive(false);
         interactUI.SetActive(false);
-        objectItem = ItemDatabase.Instance.GetItem(JSONObjectSlug);
+        objectCharacter = ItemDatabase.Instance.GetCharacter(JSONCharacterSlug);
     }
 
     public override void OnInteract()
@@ -55,16 +55,16 @@ public class QuestGiver : NPC
             DialogueManager.Instance.AddNewDialogue(Quest.completedDialogue, characterName, portrait);
         }
  
-        if (!InventoryController.Instance.playerItems.Contains(objectItem))
+        if (!InventoryController.Instance.databaseCharacters.Contains(objectCharacter))
         {
-            InventoryController.Instance.GiveItem(objectItem);
-            interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectItem.ItemName + " has been added to the database. Press I to learn more.";
+            InventoryController.Instance.GiveCharacter(objectCharacter);
+            interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectCharacter.CharacterName + " has been added to the database. Press I to learn more.";
             interactUI.SetActive(true);
         }
         else
 
         {
-            interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectItem.ItemName + " has already been added to the database.";
+            interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectCharacter.CharacterName + " has already been added to the database.";
             interactUI.SetActive(true);
         }
     }
@@ -98,17 +98,17 @@ public class QuestGiver : NPC
         if (canBeInteractedWith && !isSpeakingTo && !AssignedQuest && !Helped)
         {
             focusUI.SetActive(true);
-            focusUI.transform.GetChild(0).GetComponent<TMP_Text>().text = "Speak to " + objectItem.ItemName + " to start a quest.";
+            focusUI.transform.GetChild(0).GetComponent<TMP_Text>().text = "Speak to " + objectCharacter.CharacterName + " to start a quest.";
         }
         else if (canBeInteractedWith && !isSpeakingTo && Quest.Completed && AssignedQuest)
         {
             focusUI.SetActive(true);
-            focusUI.transform.GetChild(0).GetComponent<TMP_Text>().text = "Click to speak to " + objectItem.ItemName + " to complete quest.";
+            focusUI.transform.GetChild(0).GetComponent<TMP_Text>().text = "Click to speak to " + objectCharacter.CharacterName + " to complete quest.";
         }
         else
         {
             focusUI.SetActive(true);
-            focusUI.transform.GetChild(0).GetComponent<TMP_Text>().text = "Click to speak to " + objectItem.ItemName + ".";
+            focusUI.transform.GetChild(0).GetComponent<TMP_Text>().text = "Click to speak to " + objectCharacter.CharacterName + ".";
         }
         
     }

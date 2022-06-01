@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class NonQuestNPC : NPC
+public class NonQuestNPC : CharacterInteract
 {
     private void Start()
     {
         hasSpokenTo = false;
         focusUI.SetActive(false);
         interactUI.SetActive(false);
-        objectItem = ItemDatabase.Instance.GetItem(JSONObjectSlug);
+        objectCharacter = ItemDatabase.Instance.GetCharacter(JSONCharacterSlug);
     }
 
     public override void OnInteract()
     {
         base.OnInteract();
-        CheckInteract();
+        CheckCharacterInteract();
         focusUI.SetActive(false);
     }
 
@@ -26,7 +26,7 @@ public class NonQuestNPC : NPC
         if (canBeInteractedWith && !isSpeakingTo)
         {
             
-            focusUI.transform.GetChild(0).GetComponent<TMP_Text>().text = "Speak to " + objectItem.ItemName + ".";
+            focusUI.transform.GetChild(0).GetComponent<TMP_Text>().text = "Speak to " + objectCharacter.CharacterName + ".";
         }
         else
         {

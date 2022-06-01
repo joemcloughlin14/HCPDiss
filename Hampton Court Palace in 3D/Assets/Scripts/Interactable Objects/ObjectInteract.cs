@@ -6,7 +6,9 @@ using TMPro;
 
 public class ObjectInteract : Interactable
 {
-    private bool isCurrentlyInteracted = false;
+   
+    [SerializeField] public string JSONObjectSlug;             // this must be identical to the objectSlug in JSON file.
+    public Item objectItem;
 
     private void Start()
     {
@@ -21,7 +23,7 @@ public class ObjectInteract : Interactable
         if (canBeInteractedWith && !isCurrentlyInteracted)
         {
             focusUI.transform.GetChild(0).GetComponent<TMP_Text>().text = "Noteworthy Item: " + objectItem.ItemName + " - Click to add to database.";
-            interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectItem.InitialDescription;
+            interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectItem.addedToDatabaseString;
         }
         else
         {
@@ -32,7 +34,7 @@ public class ObjectInteract : Interactable
     public override void OnInteract()
     {
         base.OnInteract();
-        CheckInteract();
+        CheckItemInteract();
         if (canBeInteractedWith)
         {
             isCurrentlyInteracted = true;
@@ -44,5 +46,22 @@ public class ObjectInteract : Interactable
     {
         base.OnLoseFocus();
         isCurrentlyInteracted = false;
+    }
+
+    public void CheckItemInteract()
+    {
+        if (!InventoryController.Instance.databaseItems.Contains(objectItem))
+        {
+            InventoryController.Instance.GiveItem(objectItem);
+            interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectItem.ItemName + " has been added to the database. Press I to learn more.";
+            interactUI.SetActive(true);
+            //DialogueManager.Instance.AddNewDialogue(dialogue, characterName, portrait);
+        }
+        else
+        {
+            //DialogueManager.Instance.AddNewDialogue(spokenToDialogue, characterName, portrait);
+            interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectItem.ItemName + " has already been added to the database.";
+            interactUI.SetActive(true);
+        }
     }
 }

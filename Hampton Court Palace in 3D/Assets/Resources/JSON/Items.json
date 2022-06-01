@@ -1,51 +1,16 @@
 [
   {
-    "objectSlug": "great_kitchens",
-    "itemName": "Great Kitchens",
-    "initialDescription": "Added to database.",
-    "description": "Lots happened here, it was very hot.",
-    "itemType": "Weapon"
-  },
-  {
-    "objectSlug": "staff",
-    "itemName": "Cactus",
-    "initialDescription": "Added to database.",
-    "description": "A long, sharp cactus.",
-    "itemType": "Weapon"
-  },
-  {
     "objectSlug": "story_of_abraham_tapestries",
     "itemName": "Story of Abraham Tapestries",
     "initialDescription": "Story of Abraham Tapestries added to database.",
     "description": "Created for this very space in the Great Hall, made of cloth of gold, silver and silk. Very expensive.",
-    "itemType": "Consumable"
+    "itemType": "DatabaseItem"
   },
   {
     "objectSlug": "old_barrel",
     "itemName": "Old Barrel",
     "initialDescription": "Wine barrel added to database: Press I to read more.",
     "description": "Henry VIII had vast stores of wine and beer for his court. A barrel just like this would have been kept in the cellar under the Great Hall to keep it at a suitably cool temperature.",
-    "itemType": "Quest"
-  },
-  {
-    "objectSlug": "duke_of_suffolk",
-    "itemName": "The Duke of Suffolk",
-    "initialDescription": "The Duke of Suffolk added to database: Press I to read more.",
-    "description": "A great friend of the king.",
-    "itemType": "Character"
-  },
-  {
-    "objectSlug": "lord_steward",
-    "itemName": "The Lord Steward",
-    "initialDescription": "The Lord Steward added to database: Press I to read more.",
-    "description": "Runs everything below stairs.",
-    "itemType": "Character"
-  },
-  {
-    "objectSlug": "richard_rich",
-    "itemName": "Richard Rich",
-    "initialDescription": "-",
-    "description": "The lord chancellor",
-    "itemType": "Character"
+    "itemType": "QuestItem"
   }
 ]
