@@ -4211,7 +4211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryDetailsPanel: {fileID: 1781103431}
-  inventoryDetailsChPanel: {fileID: 0}
+  inventoryDetailsChPanel: {fileID: 289669825}
   currentQuests: []
 --- !u!1001 &1134351797
 PrefabInstance:
@@ -6247,7 +6247,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.040645834, y: 0.07575794}
   m_AnchorMax: {x: 0.95883346, y: 0.92100006}
-  m_AnchoredPosition: {x: 0.000061035156, y: -26.095612}
+  m_AnchoredPosition: {x: 0.000061035156, y: -26.095581}
   m_SizeDelta: {x: 0, y: -58.1913}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1874878109

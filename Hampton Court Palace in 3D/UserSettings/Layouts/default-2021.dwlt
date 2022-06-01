@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 29
+  controlID: 19
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 363
     height: 632
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 19
+  controlID: 77
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 20
+  controlID: 78
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -317,13 +317,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Resources/UI
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Resources/UI
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\c1013834\Hampton Court Palace Dissertation\HCPDiss\Hampton
     Court Palace in 3D
@@ -331,9 +331,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 3a5e0000
-    m_LastClickedID: 24122
-    m_ExpandedIDs: 000000003a5e00003c5e00003e5e0000405e0000425e0000605e0000745e000000ca9a3b
+    m_SelectedIDs: 485e0000
+    m_LastClickedID: 24136
+    m_ExpandedIDs: 00000000425e0000445e0000465e0000485e00004a5e0000685e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -361,7 +361,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000003a5e00003c5e00003e5e0000405e0000425e0000
+    m_ExpandedIDs: 00000000425e0000445e0000465e0000485e00004a5e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -488,21 +488,21 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 192}
-      m_SelectedIDs: ba420700
-      m_LastClickedID: 475834
-      m_ExpandedIDs: ca1ff8ffb464f8ff08aaf8ff18aaf8ff24aaf8ffa80af9ff320cf9ff6a24f9ff3c25f9ff263af9ff963ef9ff1244f9ff9658f9ff5c5af9ffbe5ff9ff467ff9ff38fbffff345900007a59000082590000e4590000fe590000165a00002e5a00005c5a0000685a00008a5a0000a25a0000ec5a000002800600f48006002a81060076810600cc810600948506006a860600bc860600f8860600088706005e870600bc9c0600e49d0600309e0600869e0600884107005e4207007a4207008442070092420700b0420700fc4207004643070052430700
+      scrollPos: {x: 0, y: 176}
+      m_SelectedIDs: 9c590000
+      m_LastClickedID: 22940
+      m_ExpandedIDs: 5c26ffff96a7ffff98a7ffff9aa7ffff0aaaffff38fbffff1e590000da590000f4590000465a0000925a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: FocusPanel
-        m_OriginalName: FocusPanel
+        m_Name: Scroll View Characters
+        m_OriginalName: Scroll View Characters
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 475974
+        m_UserData: -22632
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -740,9 +740,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 5.302984, y: 2.6313238, z: 1.2915539}
+    m_Target: {x: -2.40496, y: 2.9452064, z: 3.788228}
     speed: 2
-    m_Value: {x: 5.302984, y: 2.6313238, z: 1.2915539}
+    m_Value: {x: -2.40496, y: 2.9452064, z: 3.788228}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -789,13 +789,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.20895214, y: -0.10772041, z: 0.023156628, w: -0.97171015}
+    m_Target: {x: -0.153901, y: 0.45399538, z: -0.07995304, w: -0.8739754}
     speed: 2
-    m_Value: {x: -0.21033633, y: -0.11059808, z: 0.023949059, w: -0.97105783}
+    m_Value: {x: -0.15389925, y: 0.45399022, z: -0.07995213, w: -0.8739655}
   m_Size:
-    m_Target: 0.59108603
+    m_Target: 1.266952
     speed: 2
-    m_Value: 0.59108603
+    m_Value: 1.2123942
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -813,7 +813,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.24709089, y: 0.13809265, z: -0.035606537, w: -0.95844805}
+  m_LastSceneViewRotation: {x: -0.13826628, y: 0.12355243, z: -0.017393474, w: -0.98251563}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 

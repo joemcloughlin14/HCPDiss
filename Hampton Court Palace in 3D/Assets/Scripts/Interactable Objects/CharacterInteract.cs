@@ -63,7 +63,6 @@ public class CharacterInteract : Interactable
             interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectCharacter.CharacterName + " has been added to the database. Press I to learn more.";
             interactUI.SetActive(true);
             DialogueManager.Instance.AddNewDialogue(dialogue, characterName, portrait);
-            Debug.Log("Character added to database.");
         }
         else
         {

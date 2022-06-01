@@ -28,6 +28,7 @@ public class InventoryUIItem : MonoBehaviour
     public void OnSelectItemButton()
     {
         InventoryController.Instance.SetItemDetails(item, GetComponent<Button>());
+        Debug.Log("button works");
     }
     
 }

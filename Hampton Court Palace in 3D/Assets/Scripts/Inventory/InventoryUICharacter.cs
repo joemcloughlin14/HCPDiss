@@ -22,8 +22,7 @@ public class InventoryUICharacter : MonoBehaviour
     {
         characterText.text = character.CharacterName;
         characterImage.sprite = Resources.Load<Sprite>("UI/Icons/Characters/" + character.CharacterSlug);
-        Debug.Log(character.CharacterSlug);
-        //this.transform.Find("Item_Name").GetComponent<TextMeshProUGUI>().text = item.ItemName;
+        Debug.Log("Set up character values " + character.CharacterSlug);
     }
 
     public void OnSelectCharacterButton()

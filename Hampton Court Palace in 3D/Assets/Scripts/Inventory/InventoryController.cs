@@ -55,7 +55,6 @@ public class InventoryController : MonoBehaviour
         if (!databaseCharacters.Contains(character))
         {
             databaseCharacters.Add(character);
-            Debug.Log(databaseCharacters.Count + " characters in database. Added: " + characterSlug);
             UIEventHandler.CharacterAddedToInventory(character);
         }
     }
@@ -69,8 +68,8 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-    public void SetCharacterDetails(Character character, Button selectButton)
+    public void SetCharacterDetails(Character character, Button selectedButton)
     {
-        inventoryDetailsChPanel.SetCharacter(character, selectButton);
+        inventoryDetailsChPanel.SetCharacter(character, selectedButton);
     }
 }

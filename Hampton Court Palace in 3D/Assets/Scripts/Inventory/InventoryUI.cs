@@ -32,7 +32,7 @@ public class InventoryUI : MonoBehaviour
             menuIsActive = !menuIsActive;
 
             ButtonsPanel.gameObject.SetActive(menuIsActive);
-            characterScrollViewContent.gameObject.SetActive(false);
+            characterScrollViewContent.gameObject.SetActive(menuIsActive);
             itemScrollViewContent.gameObject.SetActive(menuIsActive);
             inventoryPanel.gameObject.SetActive(false);
             if (menuIsActive)

@@ -17,14 +17,13 @@ public class InventoryUIDetailsCh : MonoBehaviour
         RemoveCharacter();
     }
 
-    public void SetCharacter(Character character, Button selectButton)
+    public void SetCharacter(Character character, Button selectedButton)
     {
         gameObject.SetActive(true);
         this.character = character;
-        selectedCharacterButton = selectButton;
+        selectedCharacterButton = selectedButton;
         characterNameText.text = character.CharacterName;
         characterDescriptionText.text = character.Description;
-        Debug.Log("Character added is: " + character.CharacterName);
     }
     public void RemoveCharacter()
     {
