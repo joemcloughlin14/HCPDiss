@@ -4,13 +4,13 @@
     "roomName": "Great Kitchens",
     "addedToDatabaseString": "Great Kitchens added to database.",
     "description": "Lots happened here, it was very hot.",
-    "roomType": "Room"
+    "roomType": "DatabaseRoom"
   },
   {
     "roomSlug": "great_hall",
     "roomName": "Great Hall",
     "addedToDatabaseString": "Great Hall added to database.",
     "description": "Big major room",
-    "roomType": "Room"
+    "roomType": "DatabaseRoom"
   }
 ]

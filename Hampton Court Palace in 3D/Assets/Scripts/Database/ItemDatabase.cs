@@ -9,6 +9,7 @@ public class ItemDatabase : MonoBehaviour
     public static ItemDatabase Instance { get; set; }
     private List<Item> Items { get; set; }
     private List<Character> Characters { get; set; }
+    private List<Room> Rooms { get; set; }
    
     void Awake()
     {
@@ -23,6 +24,7 @@ public class ItemDatabase : MonoBehaviour
     {
         Items = JsonConvert.DeserializeObject<List<Item>>(Resources.Load<TextAsset>("JSON/Items").ToString());
         Characters = JsonConvert.DeserializeObject<List<Character>>(Resources.Load<TextAsset>("JSON/Characters").ToString());
+        Rooms = JsonConvert.DeserializeObject<List<Room>>(Resources.Load<TextAsset>("JSON/Rooms").ToString());
     }
 
     public Item GetItem(string itemSlug)
@@ -48,8 +50,16 @@ public class ItemDatabase : MonoBehaviour
         Debug.LogWarning("Couldn't find character: " + characterSlug);
         return null;
     }
+
+    public Room GetRoom(string roomSlug)
+    {
+        foreach (Room room in Rooms)
+        {
+            if (room.RoomSlug == roomSlug)
+                return room;
+            Debug.Log("Found room: " + roomSlug);
+        }
+        Debug.LogWarning("Couldn't find room: " + roomSlug);
+        return null;
+    }
 }
-
-
-
-// May not have to create whole new JSON file. Must be a way to find items based on their type, i.e character. Then if it is a character, save it in this other database etc.

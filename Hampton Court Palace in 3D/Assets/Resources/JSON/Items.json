@@ -7,8 +7,8 @@
     "itemType": "DatabaseItem"
   },
   {
-    "objectSlug": "old_barrel",
-    "itemName": "Old Barrel",
+    "objectSlug": "wine_barrel",
+    "itemName": "Wine Barrel",
     "addedToDatabaseString": "Wine barrel added to database: Press I to read more.",
     "description": "Henry VIII had vast stores of wine and beer for his court. A barrel just like this would have been kept in the cellar under the Great Hall to keep it at a suitably cool temperature.",
     "itemType": "QuestItem"

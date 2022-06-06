@@ -19,8 +19,8 @@ public class CollectionGoal : Goal
     public override void Init()
     {
         base.Init();
-        UIEventHandler.OnItemAddedToInventory += ItemPickedUp;
-        if (InventoryController.Instance.databaseItems.Contains(ItemDatabase.Instance.GetItem(ItemID)))
+        UIEventHandler.OnItemAddedToDatabase += ItemPickedUp;
+        if (DatabaseController.Instance.databaseItems.Contains(ItemDatabase.Instance.GetItem(ItemID)))
         {
             this.CurrentAmount++;
             Evaluate();
@@ -31,7 +31,7 @@ public class CollectionGoal : Goal
     {
         if (item.ObjectSlug == this.ItemID)
         {
-            Debug.Log("Detected pick-up of: " + ItemID);
+            //Debug.Log("Detected pick-up of: " + ItemID);
             this.CurrentAmount++;
             Evaluate();
         }

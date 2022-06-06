@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class InventoryUIDetailsCh : MonoBehaviour
+public class DatabaseUICharacterDetails : MonoBehaviour
 {
     Character character;
     Button selectedCharacterButton;

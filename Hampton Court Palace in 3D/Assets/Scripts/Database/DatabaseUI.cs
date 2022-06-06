@@ -2,26 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryUI : MonoBehaviour
+public class DatabaseUI : MonoBehaviour
 {
-    public RectTransform inventoryPanel;
+    public RectTransform databasePanel;
     public RectTransform itemScrollViewContent;
     public RectTransform characterScrollViewContent;
+    public RectTransform roomScrollViewContent;
     public GameObject Dialogue;
     public RectTransform ButtonsPanel;
-    InventoryUIItem itemContainer { get; set; }
-    InventoryUICharacter characterContainer { get; set; }
+    DatabaseUIItem itemContainer { get; set; }
+    DatabaseUICharacter characterContainer { get; set; }
+    DatabaseUIRoom roomContainer { get; set; }
     bool menuIsActive { get; set; }
     Item currentSelectedItem { get; set; }
     Character currentSelectedCharacter { get; set; }
-
+    Room currentSelectedRoom { get; set; }
     void Start()
     {
-        characterContainer = Resources.Load<InventoryUICharacter>("UI/Character_Container");
-        itemContainer = Resources.Load<InventoryUIItem>("UI/Item_Container");
-        UIEventHandler.OnItemAddedToInventory += ItemAdded;
-        UIEventHandler.OnCharacterAddedToInventory += CharacterAdded;
-        inventoryPanel.gameObject.SetActive(false);
+        characterContainer = Resources.Load<DatabaseUICharacter>("UI/Character_Container");
+        itemContainer = Resources.Load<DatabaseUIItem>("UI/Item_Container");
+        roomContainer = Resources.Load<DatabaseUIRoom>("UI/Room_Container");
+        UIEventHandler.OnItemAddedToDatabase += ItemAdded;
+        UIEventHandler.OnCharacterAddedToDatabase += CharacterAdded;
+        UIEventHandler.OnRoomAddedToDatabase += RoomAdded;
+        databasePanel.gameObject.SetActive(false);
         ButtonsPanel.gameObject.SetActive(false);
     }
 
@@ -34,7 +38,8 @@ public class InventoryUI : MonoBehaviour
             ButtonsPanel.gameObject.SetActive(menuIsActive);
             characterScrollViewContent.gameObject.SetActive(menuIsActive);
             itemScrollViewContent.gameObject.SetActive(menuIsActive);
-            inventoryPanel.gameObject.SetActive(false);
+            roomScrollViewContent.gameObject.SetActive(menuIsActive);
+            databasePanel.gameObject.SetActive(false);
             if (menuIsActive)
             {
                 Cursor.lockState = CursorLockMode.None;
@@ -57,19 +62,26 @@ public class InventoryUI : MonoBehaviour
 
     void ItemAdded(Item item)
     {
-        InventoryUIItem emptyItem = Instantiate(itemContainer);
+        DatabaseUIItem emptyItem = Instantiate(itemContainer);
         emptyItem.SetItem(item);
         emptyItem.transform.SetParent(itemScrollViewContent);
     }
 
     void CharacterAdded(Character character)
     {
-        InventoryUICharacter emptyCharacter = Instantiate(characterContainer);
+        DatabaseUICharacter emptyCharacter = Instantiate(characterContainer);
         emptyCharacter.SetCharacter(character);
         emptyCharacter.transform.SetParent(characterScrollViewContent);
     }
 
-    public bool inventoryIsOpen()
+    void RoomAdded(Room room)
+    {
+        DatabaseUIRoom emptyRoom = Instantiate(roomContainer);
+        emptyRoom.SetRoom(room);
+        emptyRoom.transform.SetParent(roomScrollViewContent);
+    }
+
+    public bool databaseIsOpen()
     {
         return menuIsActive;
     }

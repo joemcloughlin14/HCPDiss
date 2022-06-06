@@ -9,10 +9,10 @@ public class FindObjects : Quests
         Debug.Log("Find one barrel and one Great Kitchens.");
         QuestName = "Object Finder";
         Description = "Find these items.";
-        ItemReward = ItemDatabase.Instance.GetItem("story_of_abraham_tapestries");
+        //ItemReward = ItemDatabase.Instance.GetItem("great kitchens");
 
-        Goals.Add(new CollectionGoal(this, "old_barrel", "Find 1 barrel", false, 0, 1));
-        Goals.Add(new CollectionGoal(this, "great_kitchens", "Find 1 great kitchens", false, 0, 1));
+        Goals.Add(new CollectionGoal(this, "wine_barrel", "Find 1 barrel", false, 0, 1));
+        Goals.Add(new CollectionGoal(this, "story_of_abraham_tapestries", "Find 1 story of abraham tapestry", false, 0, 1));
 
         Goals.ForEach(g => g.Init());
 

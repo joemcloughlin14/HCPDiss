@@ -60,7 +60,6 @@ public class QuestGiver : CharacterInteract
     {
         AssignedQuest = true;
         Quest = (Quests)quests.AddComponent(System.Type.GetType(questType));
-
     }
 
     void checkQuest()
@@ -70,7 +69,7 @@ public class QuestGiver : CharacterInteract
             Quest.GiveReward();
             AssignedQuest = false;
             Helped = true;
-            
+
             DialogueManager.Instance.AddNewDialogue(Quest.rewardDialogue, characterName, portrait);
             Destroy((Quests)quests.GetComponent(System.Type.GetType(questType)));
         }

@@ -23,7 +23,7 @@ public class Quests : MonoBehaviour
     {
         if(ItemReward != null)
         {
-            InventoryController.Instance.GiveItem(ItemReward);
+            DatabaseController.Instance.GiveItem(ItemReward);
         }
     }
 }

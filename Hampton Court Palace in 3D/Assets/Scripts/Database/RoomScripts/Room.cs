@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 public class Room
 {
-    public enum RoomTypes { NPC, QuestGivingNPC }
+    public enum RoomTypes { DatabaseRoom, QuestRoom }
     public string RoomSlug { get; set; }
     public string RoomName { get; set; }
     public string addedToDatabaseString { get; set; }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class InventoryUIDetails : MonoBehaviour
+public class DatabaseUIItemDetails : MonoBehaviour
 {
     Item item;                      // no value?
     Button selectedItemButton;      // no value?

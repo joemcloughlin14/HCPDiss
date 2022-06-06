@@ -4,10 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class InventoryUIItem : MonoBehaviour
+public class DatabaseUIItem : MonoBehaviour
 {
     public Item item;
-    private GameObject Item_Details;           // to sort for clicking inventory item to get rid of details panel.
 
     public TextMeshProUGUI itemText;
     public Image itemImage;
@@ -27,7 +26,7 @@ public class InventoryUIItem : MonoBehaviour
 
     public void OnSelectItemButton()
     {
-        InventoryController.Instance.SetItemDetails(item, GetComponent<Button>());
+        DatabaseController.Instance.SetItemDetails(item, GetComponent<Button>());
         Debug.Log("button works");
     }
     

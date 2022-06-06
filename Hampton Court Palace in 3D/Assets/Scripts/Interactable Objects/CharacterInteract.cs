@@ -15,11 +15,6 @@ public class CharacterInteract : Interactable
     public string[] spokenToDialogue;
     public Character objectCharacter;
 
-    private void Start()
-    {
-        objectCharacter = ItemDatabase.Instance.GetCharacter(JSONCharacterSlug);
-    }
-
     public override void OnFocus()
     {
         base.OnFocus();
@@ -31,13 +26,10 @@ public class CharacterInteract : Interactable
         {
             CheckCharacterInteract();
             isCurrentlyInteracted = true;
-            //InventoryController.Instance.GiveCharacter(objectCharacter);
-            if (hasSpokenTo && InventoryController.Instance.databaseCharacters.Contains(objectCharacter))
+            if (hasSpokenTo && DatabaseController.Instance.databaseCharacters.Contains(objectCharacter))
             {
-                DialogueManager.Instance.AddNewDialogue(spokenToDialogue, characterName, portrait);
-                interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectCharacter.CharacterName + " has already been added to the database.";
+                interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectCharacter.CharacterName + " has already been added to the character database.";
                 interactUI.SetActive(true);
-                Debug.Log("Got to this point.");
             }
         }
 
@@ -57,12 +49,11 @@ public class CharacterInteract : Interactable
 
     public void CheckCharacterInteract()
     {
-        if (!InventoryController.Instance.databaseCharacters.Contains(objectCharacter))
+        if (!DatabaseController.Instance.databaseCharacters.Contains(objectCharacter))
         {
-            InventoryController.Instance.GiveCharacter(objectCharacter);
+            DatabaseController.Instance.GiveCharacter(objectCharacter);
             interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectCharacter.CharacterName + " has been added to the database. Press I to learn more.";
             interactUI.SetActive(true);
-            DialogueManager.Instance.AddNewDialogue(dialogue, characterName, portrait);
         }
         else
         {

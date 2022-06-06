@@ -8,7 +8,7 @@ public class FirstPersonController : MonoBehaviour
     private bool IsSprinting => canSprint && Input.GetKey(sprintKey);
     private bool ShouldJump => Input.GetKeyDown(jumpKey) && characterController.isGrounded;
     private bool ShouldCrouch => Input.GetKeyDown(crouchKey) && !duringCrouchAnimation && characterController.isGrounded;
-    [SerializeField] InventoryUI Inventory;
+    [SerializeField] DatabaseUI Database;
 
     [Header("Functional Options")]
     [SerializeField] private bool canSprint = true;
@@ -132,7 +132,7 @@ public class FirstPersonController : MonoBehaviour
 
     void Update()
     {
-        if (CanMove && !DialogueManager.Instance.isConversationActive() && !Inventory.inventoryIsOpen())
+        if (CanMove && !DialogueManager.Instance.isConversationActive() && !Database.databaseIsOpen())
         {
             HandleMovementInput();
             HandleMouseLook();
