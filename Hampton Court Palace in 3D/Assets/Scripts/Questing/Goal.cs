@@ -18,11 +18,11 @@ public class Goal
     {
         if(CurrentAmount >= RequiredAmount)
         {
-            checkIfComplete();
+            markAsComplete();
         }
     }
 
-    public void checkIfComplete()
+    public void markAsComplete()
     {
         Completed = true;
         Quest.CheckGoals();

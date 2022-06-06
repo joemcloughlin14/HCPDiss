@@ -39,7 +39,6 @@ public class ObjectInteract : Interactable
         {
             CheckItemInteract();
             isCurrentlyInteracted = true;
-            //DatabaseController.Instance.GiveItem(objectItem);
         }
     }
 
@@ -56,15 +55,22 @@ public class ObjectInteract : Interactable
             DatabaseController.Instance.GiveItem(objectItem);
             interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectItem.ItemName + " has been added to the database. Press I to learn more.";
             interactUI.SetActive(true);
-            //DialogueManager.Instance.AddNewDialogue(dialogue, characterName, portrait);
-            //Debug.Log("Got to part 1");
         }
         else
         {
-            //DialogueManager.Instance.AddNewDialogue(spokenToDialogue, characterName, portrait);
             interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectItem.ItemName + " has already been added to the database.";
             interactUI.SetActive(true);
-            //Debug.Log("Got to part 2");
+        }
+    }
+
+    public void CheckIfQuestItem()
+    {
+        UIEventHandler.ItemAddedToDatabase(objectItem);
+        if (DatabaseController.Instance.databaseItems.Contains(objectItem))
+        {
+            if()
+            this.CurrentAmount++;
+            Evaluate();
         }
     }
 }

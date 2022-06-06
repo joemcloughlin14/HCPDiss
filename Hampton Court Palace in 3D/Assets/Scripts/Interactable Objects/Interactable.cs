@@ -44,7 +44,6 @@ public abstract class Interactable : MonoBehaviour
     {
         interactUI.SetActive(true);
         interactUIGroup.alpha = 1;
-        //questProgressUI.SetActive(true);
     }
 
     public void HideFocusUI()
@@ -81,6 +80,15 @@ public abstract class Interactable : MonoBehaviour
                     fadeOutInteract = false;
                 }
             }
+        }
+    }
+
+    private void CheckIfQuestItem(string itemSlug)
+    {
+        string questItemCheck = itemSlug;
+        if (questItemCheck == CollectionGoal.Instance.ItemID)
+        {
+            // then show partial complete UI. Still playing around, this may not work.
         }
     }
 }

@@ -5,8 +5,9 @@ using UnityEngine;
 public class CollectionGoal : Goal
 {
     public string ItemID { get; set; }
-   
-   public CollectionGoal(Quests quest, string itemID, string description, bool completed, int currentAmount, int requiredAmount)
+    public static CollectionGoal Instance { get; set; }
+
+    public CollectionGoal(Quests quest, string itemID, string description, bool completed, int currentAmount, int requiredAmount)
     {
         this.Quest = quest;
         this.ItemID = itemID;
