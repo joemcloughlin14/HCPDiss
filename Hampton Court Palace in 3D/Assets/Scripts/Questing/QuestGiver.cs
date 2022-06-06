@@ -17,6 +17,7 @@ public class QuestGiver : CharacterInteract
     {
         focusUI.SetActive(false);
         interactUI.SetActive(false);
+        questProgressUI.SetActive(false);
         objectCharacter = ItemDatabase.Instance.GetCharacter(JSONCharacterSlug);
     }
 
@@ -24,7 +25,6 @@ public class QuestGiver : CharacterInteract
     {
         base.OnInteract();
         isSpeakingTo = true;
-        interactUI.SetActive(true);
 
         if (isSpeakingTo)
         {
@@ -36,6 +36,8 @@ public class QuestGiver : CharacterInteract
             AssignQuest();
             if (!Quest.Completed)
             {
+                questProgressUI.transform.GetComponent<TMP_Text>().text = "Quest Accepted: " + "'" + Quest.QuestName + "'" + " " + Quest.Description;
+                questProgressUI.SetActive(true);
                 DialogueManager.Instance.AddNewDialogue(dialogue, characterName, portrait);
             }
             else
@@ -53,6 +55,7 @@ public class QuestGiver : CharacterInteract
         else
         {
             DialogueManager.Instance.AddNewDialogue(Quest.completedDialogue, characterName, portrait);
+            QuestUIOff();
         }
     }
 
@@ -70,6 +73,7 @@ public class QuestGiver : CharacterInteract
             AssignedQuest = false;
             Helped = true;
 
+            QuestUIOff();
             DialogueManager.Instance.AddNewDialogue(Quest.rewardDialogue, characterName, portrait);
             Destroy((Quests)quests.GetComponent(System.Type.GetType(questType)));
         }
@@ -103,5 +107,17 @@ public class QuestGiver : CharacterInteract
     {
         base.OnLoseFocus();
         isSpeakingTo = false;
+    }
+
+    public IEnumerator TurnOffUITimer()
+    {
+        yield return new WaitForSeconds(3f);
+        questProgressUI.SetActive(false);
+    }
+
+    private void QuestUIOff()
+    {
+        questProgressUI.transform.GetComponent<TMP_Text>().text = "Quest: " + "'" + Quest.QuestName + "'" + " Completed.";
+        StartCoroutine(TurnOffUITimer());
     }
 }

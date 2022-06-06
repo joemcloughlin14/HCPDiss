@@ -6,9 +6,8 @@ public class FindObjects : Quests
 {
     void Awake()
     {
-        Debug.Log("Find one barrel and one Great Kitchens.");
-        QuestName = "Object Finder";
-        Description = "Find these items.";
+        QuestName = "Don't cry over lost barrels.";
+        Description = "Find the lost wine barrel and definitely find the Abraham tapestry.";
         //ItemReward = ItemDatabase.Instance.GetItem("great kitchens");
 
         Goals.Add(new CollectionGoal(this, "wine_barrel", "Find 1 barrel", false, 0, 1));
