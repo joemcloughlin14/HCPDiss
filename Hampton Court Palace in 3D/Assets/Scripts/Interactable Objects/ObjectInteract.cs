@@ -38,6 +38,7 @@ public class ObjectInteract : Interactable
         if (canBeInteractedWith)
         {
             CheckItemInteract();
+            //CheckIfQuestItem();
             isCurrentlyInteracted = true;
         }
     }
@@ -63,14 +64,11 @@ public class ObjectInteract : Interactable
         }
     }
 
-    public void CheckIfQuestItem()
-    {
-        UIEventHandler.ItemAddedToDatabase(objectItem);
-        if (DatabaseController.Instance.databaseItems.Contains(objectItem))
-        {
-            if()
-            this.CurrentAmount++;
-            Evaluate();
-        }
-    }
+    //public void CheckIfQuestItem(string ItemID)
+    //{
+    //    if (Quests.Instance.Goals.Contains(ItemDatabase.Instance.GetItem(ItemID))
+    //    {
+    //        Debug.Log("This is a quest item");
+    //    }
+    //}
 }

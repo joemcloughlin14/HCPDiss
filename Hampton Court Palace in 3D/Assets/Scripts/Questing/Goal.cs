@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Goal
+public class Goal : MonoBehaviour
 {
     public Quests Quest { get; set; }
     public string Description { get; set; }

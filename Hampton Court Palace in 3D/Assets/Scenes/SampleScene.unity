@@ -1880,7 +1880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactUI: {fileID: 1995699066}
   focusUI: {fileID: 2028945342}
-  questProgressUI: {fileID: 0}
+  questInProgressUI: {fileID: 0}
   focusUIGroup: {fileID: 2028945346}
   interactUIGroup: {fileID: 1995699070}
   fadeOutFocus: 0
@@ -2428,7 +2428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactUI: {fileID: 1995699066}
   focusUI: {fileID: 2028945342}
-  questProgressUI: {fileID: 0}
+  questInProgressUI: {fileID: 0}
   focusUIGroup: {fileID: 0}
   interactUIGroup: {fileID: 0}
   fadeOutFocus: 0
@@ -2677,8 +2677,14 @@ MonoBehaviour:
   itemScrollViewContent: {fileID: 994852451}
   characterScrollViewContent: {fileID: 487700787}
   roomScrollViewContent: {fileID: 1439840080}
-  Dialogue: {fileID: 922821852}
   ButtonsPanel: {fileID: 1971943958}
+  Dialogue: {fileID: 922821852}
+  questInProgressUI: {fileID: 1754249323}
+  focusUI: {fileID: 2028945342}
+  interactUIItem: {fileID: 1995699066}
+  interactUICharacter: {fileID: 1748304890}
+  interactUIRoom: {fileID: 671284599}
+  interactUIQuest: {fileID: 696330964}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2899,6 +2905,141 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715343194}
+  m_CullTransparentMesh: 1
+--- !u!1 &720477141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 720477142}
+  - component: {fileID: 720477144}
+  - component: {fileID: 720477143}
+  m_Layer: 5
+  m_Name: QuestItemFoundText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &720477142
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720477141}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1483637973}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -549.16, y: 371.5182}
+  m_SizeDelta: {x: 748.16, y: 76.8963}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &720477143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720477141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Item found text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 30
+  m_fontSizeBase: 30
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &720477144
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720477141}
   m_CullTransparentMesh: 1
 --- !u!1 &743773023
 GameObject:
@@ -3851,7 +3992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactUI: {fileID: 696330964}
   focusUI: {fileID: 2028945342}
-  questProgressUI: {fileID: 1754249323}
+  questInProgressUI: {fileID: 1754249323}
   focusUIGroup: {fileID: 2028945346}
   interactUIGroup: {fileID: 696330968}
   fadeOutFocus: 0
@@ -4061,7 +4202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactUI: {fileID: 671284599}
   focusUI: {fileID: 2028945342}
-  questProgressUI: {fileID: 0}
+  questInProgressUI: {fileID: 0}
   focusUIGroup: {fileID: 2028945346}
   interactUIGroup: {fileID: 671284601}
   fadeOutFocus: 0
@@ -5971,37 +6112,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337296931}
   m_CullTransparentMesh: 1
---- !u!1 &1412739116
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1412739117}
-  m_Layer: 0
-  m_Name: TurnOffUI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1412739117
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412739116}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 538.0514, y: 345.49994, z: -3.760574}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 33
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1428648512
 GameObject:
   m_ObjectHideFlags: 0
@@ -6435,6 +6545,7 @@ RectTransform:
   - {fileID: 1971943958}
   - {fileID: 1874878107}
   - {fileID: 1754249324}
+  - {fileID: 720477142}
   m_Father: {fileID: 0}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6477,7 +6588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactUI: {fileID: 1995699066}
   focusUI: {fileID: 2028945342}
-  questProgressUI: {fileID: 0}
+  questInProgressUI: {fileID: 0}
   focusUIGroup: {fileID: 2028945346}
   interactUIGroup: {fileID: 1995699070}
   fadeOutFocus: 0
@@ -7300,7 +7411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactUI: {fileID: 1995699066}
   focusUI: {fileID: 2028945342}
-  questProgressUI: {fileID: 0}
+  questInProgressUI: {fileID: 0}
   focusUIGroup: {fileID: 0}
   interactUIGroup: {fileID: 0}
   fadeOutFocus: 0
@@ -7679,7 +7790,7 @@ GameObject:
   - component: {fileID: 1754249326}
   - component: {fileID: 1754249325}
   m_Layer: 5
-  m_Name: QuestProgressText
+  m_Name: QuestAcceptedText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8334,7 +8445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactUI: {fileID: 1748304890}
   focusUI: {fileID: 2028945342}
-  questProgressUI: {fileID: 0}
+  questInProgressUI: {fileID: 0}
   focusUIGroup: {fileID: 2028945346}
   interactUIGroup: {fileID: 1748304894}
   fadeOutFocus: 0
@@ -8653,7 +8764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactUI: {fileID: 1748304890}
   focusUI: {fileID: 2028945342}
-  questProgressUI: {fileID: 0}
+  questInProgressUI: {fileID: 0}
   focusUIGroup: {fileID: 2028945346}
   interactUIGroup: {fileID: 1748304894}
   fadeOutFocus: 0
@@ -9367,6 +9478,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037167842}
   m_CullTransparentMesh: 1
+--- !u!1 &2060302258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2060302260}
+  - component: {fileID: 2060302261}
+  m_Layer: 0
+  m_Name: CollectionGoal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2060302260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060302258}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 538.0514, y: 345.49994, z: -3.760574}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 33
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2060302261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060302258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ba47e6885db524f96b8411bebaeb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questItemFoundUI: {fileID: 720477141}
 --- !u!1001 &2071569204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9965,7 +10121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactUI: {fileID: 0}
   focusUI: {fileID: 0}
-  questProgressUI: {fileID: 0}
+  questInProgressUI: {fileID: 0}
   focusUIGroup: {fileID: 0}
   interactUIGroup: {fileID: 0}
   fadeOutFocus: 0

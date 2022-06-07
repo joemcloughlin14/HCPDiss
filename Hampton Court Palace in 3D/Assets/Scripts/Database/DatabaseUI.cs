@@ -8,8 +8,14 @@ public class DatabaseUI : MonoBehaviour
     public RectTransform itemScrollViewContent;
     public RectTransform characterScrollViewContent;
     public RectTransform roomScrollViewContent;
-    public GameObject Dialogue;
     public RectTransform ButtonsPanel;
+    public GameObject Dialogue;
+    public GameObject questInProgressUI;
+    public GameObject focusUI;
+    public GameObject interactUIItem;
+    public GameObject interactUICharacter;
+    public GameObject interactUIRoom;
+    public GameObject interactUIQuest;
     DatabaseUIItem itemContainer { get; set; }
     DatabaseUICharacter characterContainer { get; set; }
     DatabaseUIRoom roomContainer { get; set; }
@@ -40,6 +46,14 @@ public class DatabaseUI : MonoBehaviour
             itemScrollViewContent.gameObject.SetActive(menuIsActive);
             roomScrollViewContent.gameObject.SetActive(menuIsActive);
             databasePanel.gameObject.SetActive(false);
+            questInProgressUI.SetActive(!menuIsActive);
+            focusUI.SetActive(false);
+            interactUIItem.SetActive(false);
+            interactUICharacter.SetActive(false);
+            interactUIRoom.SetActive(false);
+            interactUIQuest.SetActive(false);
+            
+
             if (menuIsActive)
             {
                 Cursor.lockState = CursorLockMode.None;

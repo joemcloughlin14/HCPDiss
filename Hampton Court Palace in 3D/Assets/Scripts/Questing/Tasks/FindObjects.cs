@@ -22,7 +22,7 @@ public class FindObjects : Quests
 
         inProgressDialogue = new string[]
         {
-            "Please hurry, I really need that barrel or the Lord Steward will have me."
+            "Please hurry, I really need both items or the Lord Steward will have me."
         };
 
         rewardDialogue = new string[]

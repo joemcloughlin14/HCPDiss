@@ -6,6 +6,7 @@ using TMPro;
 
 public class Quests : MonoBehaviour
 {
+    public static Quests Instance { get; set; }
     public List<Goal> Goals { get; set; } = new List<Goal>();
     public string QuestName { get; set; }
     public string Description { get; set; }

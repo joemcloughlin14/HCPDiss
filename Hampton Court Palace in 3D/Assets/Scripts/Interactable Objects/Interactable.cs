@@ -7,7 +7,7 @@ public abstract class Interactable : MonoBehaviour
 {
     public GameObject interactUI;
     public GameObject focusUI;
-    public GameObject questProgressUI;
+    public GameObject questInProgressUI;
     [SerializeField] private CanvasGroup focusUIGroup;
     [SerializeField] private CanvasGroup interactUIGroup;
     [SerializeField] private bool fadeOutFocus = false;
@@ -80,15 +80,6 @@ public abstract class Interactable : MonoBehaviour
                     fadeOutInteract = false;
                 }
             }
-        }
-    }
-
-    private void CheckIfQuestItem(string itemSlug)
-    {
-        string questItemCheck = itemSlug;
-        if (questItemCheck == CollectionGoal.Instance.ItemID)
-        {
-            // then show partial complete UI. Still playing around, this may not work.
         }
     }
 }

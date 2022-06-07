@@ -22,6 +22,7 @@ public class CharacterInteract : Interactable
 
     public override void OnInteract()
     {
+        isSpeakingTo = true;
         if (canBeInteractedWith)
         {
             CheckCharacterInteract();
@@ -33,7 +34,6 @@ public class CharacterInteract : Interactable
             }
         }
 
-        isSpeakingTo = true;
         if (isSpeakingTo)
         {
             HideFocusUI();

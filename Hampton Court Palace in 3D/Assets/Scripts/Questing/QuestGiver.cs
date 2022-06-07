@@ -5,6 +5,7 @@ using TMPro;
 
 public class QuestGiver : CharacterInteract
 {
+    public static QuestGiver Instance { get; set; }
     public bool AssignedQuest { get; set; }
     public bool Helped { get; set; }
     [SerializeField]
@@ -17,8 +18,16 @@ public class QuestGiver : CharacterInteract
     {
         focusUI.SetActive(false);
         interactUI.SetActive(false);
-        questProgressUI.SetActive(false);
+        questInProgressUI.SetActive(false);
         objectCharacter = ItemDatabase.Instance.GetCharacter(JSONCharacterSlug);
+    }
+
+    private void LateUpdate()
+    {
+        if (!AssignedQuest)
+        {
+            questInProgressUI.SetActive(false);
+        }
     }
 
     public override void OnInteract()
@@ -36,8 +45,8 @@ public class QuestGiver : CharacterInteract
             AssignQuest();
             if (!Quest.Completed)
             {
-                questProgressUI.transform.GetComponent<TMP_Text>().text = "Quest Accepted: " + "'" + Quest.QuestName + "'" + " " + Quest.Description;
-                questProgressUI.SetActive(true);
+                questInProgressUI.transform.GetComponent<TMP_Text>().text = "Quest Accepted: " + "'" + Quest.QuestName + "'\n" + Quest.Description + "\n" + CollectionGoal.Instance.ItemID;
+                questInProgressUI.SetActive(true);
                 DialogueManager.Instance.AddNewDialogue(dialogue, characterName, portrait);
             }
             else
@@ -111,13 +120,13 @@ public class QuestGiver : CharacterInteract
 
     public IEnumerator TurnOffUITimer()
     {
-        yield return new WaitForSeconds(3f);
-        questProgressUI.SetActive(false);
+        yield return new WaitForSeconds(5f);
+        questInProgressUI.SetActive(false);
     }
 
     private void QuestUIOff()
     {
-        questProgressUI.transform.GetComponent<TMP_Text>().text = "Quest: " + "'" + Quest.QuestName + "'" + " Completed.";
+        questInProgressUI.transform.GetComponent<TMP_Text>().text = "Quest: " + "'" + Quest.QuestName + "'" + " Completed.";
         StartCoroutine(TurnOffUITimer());
     }
 }
