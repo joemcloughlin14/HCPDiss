@@ -7,7 +7,6 @@ public abstract class Interactable : MonoBehaviour
 {
     public GameObject interactUI;
     public GameObject focusUI;
-    public GameObject questInProgressUI;
     [SerializeField] private CanvasGroup focusUIGroup;
     [SerializeField] private CanvasGroup interactUIGroup;
     [SerializeField] private bool fadeOutFocus = false;

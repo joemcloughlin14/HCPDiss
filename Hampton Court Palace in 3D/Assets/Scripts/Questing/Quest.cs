@@ -4,9 +4,9 @@ using UnityEngine;
 using System.Linq;
 using TMPro;
 
-public class Quests : MonoBehaviour
+public class Quest : MonoBehaviour
 {
-    public static Quests Instance { get; set; }
+    public static Quest Instance { get; set; }
     public List<Goal> Goals { get; set; } = new List<Goal>();
     public string QuestName { get; set; }
     public string Description { get; set; }

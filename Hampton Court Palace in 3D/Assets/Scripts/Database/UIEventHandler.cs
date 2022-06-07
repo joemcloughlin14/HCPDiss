@@ -10,6 +10,8 @@ public class UIEventHandler : MonoBehaviour
     public static event CharacterEventHandler OnCharacterAddedToDatabase;
     public delegate void RoomEventHandler(Room room);
     public static event RoomEventHandler OnRoomAddedToDatabase;
+    public delegate void QuestEventHandler(Quest quest);
+    public static event QuestEventHandler OnQuestAddedToDatabase;
 
     public static void ItemAddedToDatabase(Item item)
     {
@@ -24,5 +26,10 @@ public class UIEventHandler : MonoBehaviour
     public static void RoomAddedToDatabase(Room room)
     {
         OnRoomAddedToDatabase(room);
+    }
+
+    public static void QuestAddedToDatabase(Quest quest)
+    {
+        OnQuestAddedToDatabase(quest);
     }
 }

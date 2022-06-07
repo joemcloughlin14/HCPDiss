@@ -11,14 +11,17 @@ public class QuestGiver : CharacterInteract
     [SerializeField]
     private GameObject quests;
     [SerializeField]
-    private string questType;
-    public Quests Quest { get; set; }
+    public string questType;
+    public Quest Quest { get; set; }
+    public GameObject questInProgressUI;
+    public GameObject questCompletedUI;
 
     private void Start()
     {
         focusUI.SetActive(false);
         interactUI.SetActive(false);
         questInProgressUI.SetActive(false);
+        questCompletedUI.SetActive(false);
         objectCharacter = ItemDatabase.Instance.GetCharacter(JSONCharacterSlug);
     }
 
@@ -45,7 +48,7 @@ public class QuestGiver : CharacterInteract
             AssignQuest();
             if (!Quest.Completed)
             {
-                questInProgressUI.transform.GetComponent<TMP_Text>().text = "Quest Accepted: " + "'" + Quest.QuestName + "'\n" + Quest.Description + "\n" + CollectionGoal.Instance.ItemID;
+                questInProgressUI.transform.GetComponent<TMP_Text>().text = "Quest Accepted: " + "'" + Quest.QuestName + "'\n - " + Quest.Description;
                 questInProgressUI.SetActive(true);
                 DialogueManager.Instance.AddNewDialogue(dialogue, characterName, portrait);
             }
@@ -71,7 +74,8 @@ public class QuestGiver : CharacterInteract
     void AssignQuest()
     {
         AssignedQuest = true;
-        Quest = (Quests)quests.AddComponent(System.Type.GetType(questType));
+        Quest = (Quest)quests.AddComponent(System.Type.GetType(questType));
+        DatabaseController.Instance.GiveQuest(Quest);
     }
 
     void checkQuest()
@@ -84,7 +88,7 @@ public class QuestGiver : CharacterInteract
 
             QuestUIOff();
             DialogueManager.Instance.AddNewDialogue(Quest.rewardDialogue, characterName, portrait);
-            Destroy((Quests)quests.GetComponent(System.Type.GetType(questType)));
+            Destroy((Quest)quests.GetComponent(System.Type.GetType(questType)));
         }
         else
         {
@@ -121,12 +125,13 @@ public class QuestGiver : CharacterInteract
     public IEnumerator TurnOffUITimer()
     {
         yield return new WaitForSeconds(5f);
-        questInProgressUI.SetActive(false);
+        questCompletedUI.SetActive(false);
     }
 
     private void QuestUIOff()
     {
-        questInProgressUI.transform.GetComponent<TMP_Text>().text = "Quest: " + "'" + Quest.QuestName + "'" + " Completed.";
+        questCompletedUI.SetActive(true);
+        questCompletedUI.transform.GetComponent<TMP_Text>().text = "Quest: " + "'" + Quest.QuestName + "'" + " Completed.";
         StartCoroutine(TurnOffUITimer());
     }
 }

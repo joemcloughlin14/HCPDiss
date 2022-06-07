@@ -8,6 +8,7 @@ public class DatabaseUI : MonoBehaviour
     public RectTransform itemScrollViewContent;
     public RectTransform characterScrollViewContent;
     public RectTransform roomScrollViewContent;
+    public RectTransform questPanelContent;
     public RectTransform ButtonsPanel;
     public GameObject Dialogue;
     public GameObject questInProgressUI;
@@ -19,18 +20,20 @@ public class DatabaseUI : MonoBehaviour
     DatabaseUIItem itemContainer { get; set; }
     DatabaseUICharacter characterContainer { get; set; }
     DatabaseUIRoom roomContainer { get; set; }
+    DatabaseUIQuest questContainer { get; set; }
     bool menuIsActive { get; set; }
-    Item currentSelectedItem { get; set; }
-    Character currentSelectedCharacter { get; set; }
-    Room currentSelectedRoom { get; set; }
     void Start()
     {
         characterContainer = Resources.Load<DatabaseUICharacter>("UI/Character_Container");
         itemContainer = Resources.Load<DatabaseUIItem>("UI/Item_Container");
         roomContainer = Resources.Load<DatabaseUIRoom>("UI/Room_Container");
+        questContainer = Resources.Load<DatabaseUIQuest>("UI/EachQuestPanel");
+        Debug.Log("Found: " + questContainer);
+        Debug.Log("Found: " + roomContainer);
         UIEventHandler.OnItemAddedToDatabase += ItemAdded;
         UIEventHandler.OnCharacterAddedToDatabase += CharacterAdded;
         UIEventHandler.OnRoomAddedToDatabase += RoomAdded;
+        UIEventHandler.OnQuestAddedToDatabase += QuestAdded;
         databasePanel.gameObject.SetActive(false);
         ButtonsPanel.gameObject.SetActive(false);
     }
@@ -93,6 +96,13 @@ public class DatabaseUI : MonoBehaviour
         DatabaseUIRoom emptyRoom = Instantiate(roomContainer);
         emptyRoom.SetRoom(room);
         emptyRoom.transform.SetParent(roomScrollViewContent);
+    }
+
+    void QuestAdded(Quest quest)
+    {
+        DatabaseUIQuest emptyQuest = Instantiate(questContainer);
+        emptyQuest.SetQuest(quest);
+        emptyQuest.transform.SetParent(questPanelContent);
     }
 
     public bool databaseIsOpen()

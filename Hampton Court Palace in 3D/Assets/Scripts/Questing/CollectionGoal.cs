@@ -13,7 +13,7 @@ public class CollectionGoal : Goal
     {
         questItemFoundUI.SetActive(false);
     }
-    public CollectionGoal(Quests quest, string itemID, string description, bool completed, int currentAmount, int requiredAmount)
+    public CollectionGoal(Quest quest, string itemID, string description, bool completed, int currentAmount, int requiredAmount)
     {
         this.Quest = quest;
         this.ItemID = itemID;

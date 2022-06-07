@@ -7,7 +7,7 @@ public class DatabaseButtonsManager : MonoBehaviour
     public RectTransform characterDatabasePanel;
     public RectTransform itemDatabasePanel;
     public RectTransform roomDatabasePanel;
-    //public RectTransform questDatabasePanel;
+    public RectTransform questDatabasePanel;
     public RectTransform databasePanel;
     public void openCharacterDatabase()
     {
@@ -16,7 +16,7 @@ public class DatabaseButtonsManager : MonoBehaviour
             characterDatabasePanel.gameObject.SetActive(true);
             itemDatabasePanel.gameObject.SetActive(false);
             roomDatabasePanel.gameObject.SetActive(false);
-            //questDatabasePanel.gameObject.SetActive(false);
+            questDatabasePanel.gameObject.SetActive(false);
             databasePanel.gameObject.SetActive(true);
         }
         else
@@ -30,7 +30,7 @@ public class DatabaseButtonsManager : MonoBehaviour
             itemDatabasePanel.gameObject.SetActive(true);
             characterDatabasePanel.gameObject.SetActive(false);
             roomDatabasePanel.gameObject.SetActive(false);
-            //questDatabasePanel.gameObject.SetActive(false);
+            questDatabasePanel.gameObject.SetActive(false);
             databasePanel.gameObject.SetActive(true);
         }
         else
@@ -44,24 +44,24 @@ public class DatabaseButtonsManager : MonoBehaviour
             roomDatabasePanel.gameObject.SetActive(true);
             characterDatabasePanel.gameObject.SetActive(false);
             itemDatabasePanel.gameObject.SetActive(false);
-            //questDatabasePanel.gameObject.SetActive(false);
+            questDatabasePanel.gameObject.SetActive(false);
             databasePanel.gameObject.SetActive(true);
         }
         else
             roomDatabasePanel.gameObject.SetActive(false);
     }
 
-    //public void openQuestDatabase()
-    //{
-    //    if (questDatabasePanel.gameObject.activeInHierarchy == false)
-    //    {
-    //        questDatabasePanel.gameObject.SetActive(true);
-    //        characterDatabasePanel.gameObject.SetActive(false);
-    //        itemDatabasePanel.gameObject.SetActive(false);
-    //        roomDatabasePanel.gameObject.SetActive(false);
-    //        databasePanel.gameObject.SetActive(true);
-    //    }
-    //    else
-    //        questDatabasePanel.gameObject.SetActive(false);
-    //}
+    public void openQuestDatabase()
+    {
+        if (questDatabasePanel.gameObject.activeInHierarchy == false)
+        {
+            questDatabasePanel.gameObject.SetActive(true);
+            characterDatabasePanel.gameObject.SetActive(false);
+            itemDatabasePanel.gameObject.SetActive(false);
+            roomDatabasePanel.gameObject.SetActive(false);
+            databasePanel.gameObject.SetActive(true);
+        }
+        else
+            questDatabasePanel.gameObject.SetActive(false);
+    }
 }

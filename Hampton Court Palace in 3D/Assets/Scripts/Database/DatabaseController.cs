@@ -10,10 +10,11 @@ public class DatabaseController : MonoBehaviour
     public DatabaseUIItemDetails databaseItemDetailsPanel;
     public DatabaseUICharacterDetails databaseCharacterDetailsPanel;
     public DatabaseUIRoomDetails databaseRoomDetailsPanel;
+    public DatabaseUIQuestDetails databaseUIQuestPanel;
     public List<Item> databaseItems = new List<Item>();
     public List<Character> databaseCharacters = new List<Character>();
     public List<Room> databaseRooms = new List<Room>();
-    //public List<Quests> currentQuests = new List<Quests>();
+    public List<Quest> currentQuests = new List<Quest>();
 
     private void Start()
     {
@@ -99,7 +100,21 @@ public class DatabaseController : MonoBehaviour
     {
         databaseRoomDetailsPanel.SetRoom(room, selectedButton);
     }
+
+    public void GiveQuest(Quest quest)
+    {
+        if (!currentQuests.Contains(quest))
+        {
+            currentQuests.Add(quest);
+            UIEventHandler.QuestAddedToDatabase(quest);
+        }
+    }
+
+    public void SetQuestDetails(Quest quest)
+    {
+        databaseUIQuestPanel.SetQuest(quest);
+    }
+        
 }
 
-// the addition of room database is not complete. Began changing this script and partially updating inventory script names to database, including DatabaseUIItemDetails
-// Consider whether this will be used the same as rooms may be added by non interaction? Perhaps triggers. Although maybe doors? or the floors?
+
