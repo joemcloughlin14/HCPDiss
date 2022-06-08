@@ -16,8 +16,14 @@ public class NonQuestNPC : CharacterInteract
     public override void OnInteract()
     {
         base.OnInteract();
-        CheckCharacterInteract();
         focusUI.SetActive(false);
+        if (hasSpokenTo)
+        {
+            DialogueManager.Instance.AddNewDialogue(spokenToDialogue, characterName, portrait);
+        }
+        else
+        DialogueManager.Instance.AddNewDialogue(dialogue, characterName, portrait);
+        CheckCharacterInteract();
     }
 
     public override void OnFocus()

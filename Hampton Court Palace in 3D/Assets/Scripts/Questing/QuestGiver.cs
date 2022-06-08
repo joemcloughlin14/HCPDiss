@@ -15,6 +15,7 @@ public class QuestGiver : CharacterInteract
     public Quest Quest { get; set; }
     public GameObject questInProgressUI;
     public GameObject questCompletedUI;
+    public RectTransform questPanelContent;
 
     private void Start()
     {
@@ -23,14 +24,6 @@ public class QuestGiver : CharacterInteract
         questInProgressUI.SetActive(false);
         questCompletedUI.SetActive(false);
         objectCharacter = ItemDatabase.Instance.GetCharacter(JSONCharacterSlug);
-    }
-
-    private void LateUpdate()
-    {
-        if (!AssignedQuest)
-        {
-            questInProgressUI.SetActive(false);
-        }
     }
 
     public override void OnInteract()
@@ -48,14 +41,16 @@ public class QuestGiver : CharacterInteract
             AssignQuest();
             if (!Quest.Completed)
             {
-                questInProgressUI.transform.GetComponent<TMP_Text>().text = "Quest Accepted: " + "'" + Quest.QuestName + "'\n - " + Quest.Description;
+                Debug.Log("Quest not complete.");
                 questInProgressUI.SetActive(true);
+                questInProgressUI.transform.GetComponent<TMP_Text>().text = "Quest Accepted: " + "'" + Quest.QuestName + "'\n - " + Quest.Description;
                 DialogueManager.Instance.AddNewDialogue(dialogue, characterName, portrait);
             }
             else
             {
                 DialogueManager.Instance.AddNewDialogue(Quest.completedAlreadyDialogue, characterName, portrait);
                 Helped = true;
+                Debug.Log("Completed already.");
                 return;
             }
             
@@ -67,28 +62,37 @@ public class QuestGiver : CharacterInteract
         else
         {
             DialogueManager.Instance.AddNewDialogue(Quest.completedDialogue, characterName, portrait);
-            QuestUIOff();
+            QuestCompletedUIOff();
+            questInProgressUI.SetActive(false);
+            AssignedQuest = false;
+            //Destroy(DatabaseUI.Instance.questPanelContent);           // same as below
         }
     }
 
     void AssignQuest()
     {
+        Debug.Log("Quest assigned");
+        
         AssignedQuest = true;
         Quest = (Quest)quests.AddComponent(System.Type.GetType(questType));
         DatabaseController.Instance.GiveQuest(Quest);
+        Debug.Log(Quest);
     }
 
     void checkQuest()
     {
         if (Quest.Completed)
         {
-            Quest.GiveReward();
+            //Quest.GiveReward();
             AssignedQuest = false;
             Helped = true;
 
-            QuestUIOff();
+            QuestCompletedUIOff();
+            questInProgressUI.SetActive(false);
             DialogueManager.Instance.AddNewDialogue(Quest.rewardDialogue, characterName, portrait);
             Destroy((Quest)quests.GetComponent(System.Type.GetType(questType)));
+            
+            //Destroy(DatabaseUI.Instance.questPanelContent);     // not working as intended, to get rid of no longer active quests.
         }
         else
         {
@@ -128,7 +132,7 @@ public class QuestGiver : CharacterInteract
         questCompletedUI.SetActive(false);
     }
 
-    private void QuestUIOff()
+    private void QuestCompletedUIOff()
     {
         questCompletedUI.SetActive(true);
         questCompletedUI.transform.GetComponent<TMP_Text>().text = "Quest: " + "'" + Quest.QuestName + "'" + " Completed.";

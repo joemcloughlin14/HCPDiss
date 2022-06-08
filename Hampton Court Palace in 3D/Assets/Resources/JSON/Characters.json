@@ -1,23 +1,37 @@
 [
   {
     "characterSlug": "duke_of_suffolk",
-    "characterName": "The Duke of Suffolk",
-    "addedToDatabaseString": "The Duke of Suffolk added to database: Press I to read more.",
+    "characterName": "Charles Brandon, The Duke of Suffolk",
+    "addedToDatabaseString": "The Duke of Suffolk has been added to database: Press I to read more.",
     "description": "A great friend of the king.",
     "characterType": "NPC"
   },
   {
     "characterSlug": "lord_steward",
-    "characterName": "The Lord Steward",
-    "addedToDatabaseString": "The Lord Steward added to database: Press I to read more.",
+    "characterName": "William Paulet, The Lord Steward",
+    "addedToDatabaseString": "The Lord Steward has been added to database: Press I to read more.",
     "description": "Runs everything below stairs.",
     "characterType": "NPC"
   },
   {
     "characterSlug": "richard_rich",
-    "characterName": "Richard Rich",
-    "addedToDatabaseString": "-",
+    "characterName": "Richard Rich, the Lord Chancellor",
+    "addedToDatabaseString": "The Lord Chancellor has been added to database: Press I to read more.",
     "description": "The lord chancellor",
+    "characterType": "QuestGivingNPC"
+  },
+  {
+    "characterSlug": "duke_of_norfolk",
+    "characterName": "Thomas Howard, 3rd The Duke of Norfolk",
+    "addedToDatabaseString": "The Duke of Norfolk has been added to database: Press I to read more.",
+    "description": "The most senior peer of the realm, father to the Earl of Surrey.",
+    "characterType": "QuestGivingNPC"
+  },
+  {
+    "characterSlug": "earl_of_surrey",
+    "characterName": "Henry Howard, Earl of Surrey",
+    "addedToDatabaseString": "The Earl of Surrey has been added to database: Press I to read more.",
+    "description": "Son to the Duke of Norfolk. In 1546 he controversially had a painting commissioned of him showing the royal arms of his ancestors. An act that would contribute to his execution.",
     "characterType": "QuestGivingNPC"
   }
 ]

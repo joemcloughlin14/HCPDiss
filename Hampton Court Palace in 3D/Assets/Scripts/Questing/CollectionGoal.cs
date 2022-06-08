@@ -12,6 +12,7 @@ public class CollectionGoal : Goal
     private void Start()
     {
         questItemFoundUI.SetActive(false);
+        
     }
     public CollectionGoal(Quest quest, string itemID, string description, bool completed, int currentAmount, int requiredAmount)
     {
@@ -30,7 +31,9 @@ public class CollectionGoal : Goal
         if (DatabaseController.Instance.databaseItems.Contains(ItemDatabase.Instance.GetItem(ItemID)))
         {
             this.CurrentAmount++;
-            Debug.Log("Quest item found " + ItemID);
+            Debug.Log("Quest item already found: " + ItemID);
+            //questItemFoundUI.SetActive(true);
+            //Debug.Log(questItemFoundUI);
             Evaluate();
         }
     }

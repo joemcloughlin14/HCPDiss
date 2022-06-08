@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DatabaseUI : MonoBehaviour
 {
+    public static DatabaseUI Instance { get; set; }
     public RectTransform databasePanel;
     public RectTransform itemScrollViewContent;
     public RectTransform characterScrollViewContent;
@@ -62,7 +63,7 @@ public class DatabaseUI : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 Dialogue.gameObject.SetActive(false);
-                
+
             }
             else
             {
