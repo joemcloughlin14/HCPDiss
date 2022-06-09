@@ -34,7 +34,7 @@ public class Door : Interactable
 
     public override void OnInteract()
     {
-        base.OnInteract();
+        //base.OnInteract();
         if (canBeInteractedWith)
         {
             isOpen = !isOpen;

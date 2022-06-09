@@ -33,5 +33,12 @@
     "addedToDatabaseString": "The Earl of Surrey has been added to database: Press I to read more.",
     "description": "Son to the Duke of Norfolk. In 1546 he controversially had a painting commissioned of him showing the royal arms of his ancestors. An act that would contribute to his execution.",
     "characterType": "QuestGivingNPC"
+  },
+  {
+    "characterSlug": "thomas_cranmer",
+    "characterName": "Thomas Cranmer, Archbishop of Cantebury",
+    "addedToDatabaseString": "Thomas Cranmer has been added to database: Press I to read more.",
+    "description": "The most senior bishop and principal leader of the Church of England. He was the first Protestant Archbishop, excommunicated by Rome and deprived for heresy in 1553. Executed by burning on 21 March 1556.",
+    "characterType": "QuestGivingNPC"
   }
 ]

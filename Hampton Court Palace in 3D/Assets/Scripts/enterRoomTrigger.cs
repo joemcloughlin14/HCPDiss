@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class isTrigger : MonoBehaviour
+public class enterRoomTrigger : MonoBehaviour
 {
     [SerializeField]
     GameObject triggerUI;
     [SerializeField] public string JSONRoomSlug;             // this must be identical to the objectSlug in JSON file.
     public Room objectRoom;
     [SerializeField]
-    GameObject interactUI;
+    GameObject RoomInteract;
     bool roomEntered;
     bool playerDetected;
     GameObject leaveUI;
@@ -29,19 +29,16 @@ public class isTrigger : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R))
             {
                 RoomFoundUIO();
-                CheckRoomInteract();
             }
         }
-        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Player entered trigger.");
-        
-        RoomFoundUIO();
         roomEntered = true;
-  
+        RoomFoundUIO();
+        CheckRoomInteract();
     }
 
     private void OnTriggerStay(Collider other)
@@ -61,6 +58,7 @@ public class isTrigger : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         triggerUI.SetActive(false);
+        RoomInteract.SetActive(false);
     }
 
     private void RoomFoundUIO()
@@ -75,8 +73,8 @@ public class isTrigger : MonoBehaviour
         if (!DatabaseController.Instance.databaseRooms.Contains(objectRoom))
         {
             DatabaseController.Instance.GiveRoom(objectRoom);
-            interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectRoom.RoomName + " has been added to the room database. Press I to learn more.";
-            interactUI.SetActive(true);
+            RoomInteract.transform.GetComponent<TMP_Text>().text = objectRoom.RoomName + " has been added to the room database. Press I to learn more.";
+            RoomInteract.SetActive(true);
         }
         //else
         //{
