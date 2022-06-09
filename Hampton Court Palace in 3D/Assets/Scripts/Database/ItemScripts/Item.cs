@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 public class Item
 {
-    public enum ItemTypes { QuestItem, DatabaseItem }             
+    public enum ItemTypes { QuestItem, DatabaseItem, DoorKey, DoorLock }             
     public string ObjectSlug { get; set; }
     public string ItemName { get; set; }
     public string addedToDatabaseString { get; set; }

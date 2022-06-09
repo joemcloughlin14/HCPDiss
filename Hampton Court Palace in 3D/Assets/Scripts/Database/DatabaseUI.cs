@@ -48,7 +48,14 @@ public class DatabaseUI : MonoBehaviour
             itemScrollViewContent.gameObject.SetActive(menuIsActive);
             roomScrollViewContent.gameObject.SetActive(menuIsActive);
             databasePanel.gameObject.SetActive(false);
-            questInProgressUI.SetActive(!menuIsActive);
+            //if (QuestGiver.Instance.AssignedQuest)
+            //{
+                questInProgressUI.SetActive(!menuIsActive);
+            //}
+            //else
+            //{
+            //    questInProgressUI.SetActive(false);
+            //}
             focusUI.SetActive(false);
             interactUIItem.SetActive(false);
             interactUICharacter.SetActive(false);

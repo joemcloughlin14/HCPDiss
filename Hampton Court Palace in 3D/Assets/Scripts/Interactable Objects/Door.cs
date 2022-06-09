@@ -13,6 +13,7 @@ public class Door : Interactable
 
     private void Start()
     {
+
         anim = GetComponent<Animator>();
         interactUI.SetActive(false);
         focusUI.SetActive(false);

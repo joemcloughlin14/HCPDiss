@@ -28,7 +28,7 @@ public class enterRoomTrigger : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
-                RoomFoundUIO();
+                RoomFoundUI();
             }
         }
     }
@@ -37,7 +37,7 @@ public class enterRoomTrigger : MonoBehaviour
     {
         Debug.Log("Player entered trigger.");
         roomEntered = true;
-        RoomFoundUIO();
+        RoomFoundUI();
         CheckRoomInteract();
     }
 
@@ -61,7 +61,7 @@ public class enterRoomTrigger : MonoBehaviour
         RoomInteract.SetActive(false);
     }
 
-    private void RoomFoundUIO()
+    private void RoomFoundUI()
     {
         triggerUI.SetActive(true);
         triggerUI.transform.GetComponent<TMP_Text>().text = "'" + objectRoom.RoomName + "'";

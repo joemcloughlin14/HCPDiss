@@ -8,7 +8,7 @@ public class FindEarlofSurrey : Quest
     {
         QuestName = "My son, the troublesome fellow.";
         Description = "Find Lord Norfolk's Son, the Early of Surrey and report back with his whereabouts.";
-        //ItemReward = ItemDatabase.Instance.GetItem("great kitchens");
+        ItemReward = ItemDatabase.Instance.GetItem("kitchen_key");
 
         Goals.Add(new MeetGoal(this, "earl_of_surrey", "Find the Earl of Surrey.", false, 0, 1));
 

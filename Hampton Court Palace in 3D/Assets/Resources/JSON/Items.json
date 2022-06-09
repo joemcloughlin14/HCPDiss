@@ -4,7 +4,7 @@
     "itemName": "Story of Abraham Tapestries",
     "addedToDatabaseString": "Story of Abraham Tapestries added to database.",
     "description": "Created for this very space in the Great Hall, made of cloth of gold, silver and silk. Very expensive.",
-    "itemType": "DatabaseItem"
+    "itemType": "QuestItem"
   },
   {
     "objectSlug": "wine_barrel",
@@ -12,5 +12,19 @@
     "addedToDatabaseString": "Wine barrel added to database: Press I to read more.",
     "description": "Henry VIII had vast stores of wine and beer for his court. A barrel just like this would have been kept in the cellar under the Great Hall to keep it at a suitably cool temperature.",
     "itemType": "QuestItem"
+  },
+  {
+    "objectSlug": "kitchen_key",
+    "itemName": "Kitchen Key",
+    "addedToDatabaseString": "Key for Great Kitchens received. You may now access this area.",
+    "description": "This key allows access to the Great Kitchens area.",
+    "itemType": "DoorKey"
+  },
+  {
+    "objectSlug": "locked_door",
+    "itemName": "Locked Door",
+    "addedToDatabaseString": "This door is still locked. Find the key to access.",
+    "description": "Locked door to Great Kitchens",
+    "itemType": "DoorLock"
   }
 ]

@@ -8,7 +8,7 @@ public class FindKitchens : Quest
     {
         QuestName = "The greatest kitchens in all the land";
         Description = "Find the Great Kitchens and explore.";
-        //ItemReward = ItemDatabase.Instance.GetItem("great kitchens");
+        //ItemReward = ItemDatabase.Instance.GetItem("kitchen_key");
 
         Goals.Add(new FindRoomGoal(this, "great_kitchens", "Find the Great Kitchens.", false, 0, 1));
 
