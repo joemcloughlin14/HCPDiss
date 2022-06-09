@@ -31,7 +31,6 @@ public class CollectionGoal : Goal
         if (DatabaseController.Instance.databaseItems.Contains(ItemDatabase.Instance.GetItem(ItemID)))
         {
             this.CurrentAmount++;
-            Debug.Log("Quest item already found: " + ItemID);
             //questItemFoundUI.SetActive(true);
             //Debug.Log(questItemFoundUI);
             Evaluate();

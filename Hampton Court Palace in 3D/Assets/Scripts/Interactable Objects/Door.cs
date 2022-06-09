@@ -1,23 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Door : Interactable
 {
     private bool isOpen = false;
     private Animator anim;
+    [SerializeField] public string JSONRoomSlug;             // this must be identical to the objectSlug in JSON file.
+    public Room objectRoom;
+    GameObject triggerCube;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+        interactUI.SetActive(false);
+        focusUI.SetActive(false);
+        objectRoom = ItemDatabase.Instance.GetRoom(JSONRoomSlug);
     }
     public override void OnFocus()
     {
-        
+        base.OnFocus();
+        if (canBeInteractedWith && !isCurrentlyInteracted)
+        {
+            focusUI.transform.GetChild(0).GetComponent<TMP_Text>().text = "Enter " + objectRoom.RoomName;
+            interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectRoom.addedToDatabaseString;
+        }
+        else
+        {
+            focusUI.SetActive(false);
+        }
     }
 
     public override void OnInteract()
     {
+        base.OnInteract();
         if (canBeInteractedWith)
         {
             isOpen = !isOpen;
@@ -31,11 +48,18 @@ public class Door : Interactable
 
             StartCoroutine(AutoClose());
         }
+
+        //if (canBeInteractedWith)
+        //{
+        //    CheckRoomInteract();
+        //    isCurrentlyInteracted = true;
+        //}
     }
 
     public override void OnLoseFocus()
     {
-        
+        base.OnLoseFocus();
+        isCurrentlyInteracted = false;
     }
 
     private IEnumerator AutoClose()
@@ -63,4 +87,5 @@ public class Door : Interactable
         canBeInteractedWith = true;
     }
 
+    
 }

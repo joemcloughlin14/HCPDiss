@@ -29,8 +29,6 @@ public class DatabaseUI : MonoBehaviour
         itemContainer = Resources.Load<DatabaseUIItem>("UI/Item_Container");
         roomContainer = Resources.Load<DatabaseUIRoom>("UI/Room_Container");
         questContainer = Resources.Load<DatabaseUIQuest>("UI/EachQuestPanel");
-        Debug.Log("Found: " + questContainer);
-        Debug.Log("Found: " + roomContainer);
         UIEventHandler.OnItemAddedToDatabase += ItemAdded;
         UIEventHandler.OnCharacterAddedToDatabase += CharacterAdded;
         UIEventHandler.OnRoomAddedToDatabase += RoomAdded;

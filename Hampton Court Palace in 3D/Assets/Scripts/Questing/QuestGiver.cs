@@ -41,16 +41,15 @@ public class QuestGiver : CharacterInteract
             AssignQuest();
             if (!Quest.Completed)
             {
-                Debug.Log("Quest not complete.");
                 questInProgressUI.SetActive(true);
                 questInProgressUI.transform.GetComponent<TMP_Text>().text = "Quest Accepted: " + "'" + Quest.QuestName + "'\n - " + Quest.Description;
                 DialogueManager.Instance.AddNewDialogue(dialogue, characterName, portrait);
             }
             else
             {
+                QuestCompletedUIOff();
                 DialogueManager.Instance.AddNewDialogue(Quest.completedAlreadyDialogue, characterName, portrait);
                 Helped = true;
-                Debug.Log("Completed already.");
                 return;
             }
             
@@ -71,12 +70,9 @@ public class QuestGiver : CharacterInteract
 
     void AssignQuest()
     {
-        Debug.Log("Quest assigned");
-        
         AssignedQuest = true;
         Quest = (Quest)quests.AddComponent(System.Type.GetType(questType));
         DatabaseController.Instance.GiveQuest(Quest);
-        Debug.Log(Quest);
     }
 
     void checkQuest()
