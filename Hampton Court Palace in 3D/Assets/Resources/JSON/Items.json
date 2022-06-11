@@ -15,7 +15,7 @@
   },
   {
     "objectSlug": "kitchen_key",
-    "itemName": "Kitchen Key",
+    "itemName": "Key for the Great Kitchens",
     "addedToDatabaseString": "Key for Great Kitchens received. You may now access this area.",
     "description": "This key allows access to the Great Kitchens area.",
     "itemType": "DoorKey"

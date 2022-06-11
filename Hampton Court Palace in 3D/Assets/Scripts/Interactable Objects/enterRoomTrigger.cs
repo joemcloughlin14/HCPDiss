@@ -28,7 +28,7 @@ public class enterRoomTrigger : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
-                RoomFoundUI();
+                RoomLabelUI();
             }
         }
     }
@@ -37,7 +37,7 @@ public class enterRoomTrigger : MonoBehaviour
     {
         Debug.Log("Player entered trigger.");
         roomEntered = true;
-        RoomFoundUI();
+        RoomInteractUI();
         CheckRoomInteract();
     }
 
@@ -54,18 +54,30 @@ public class enterRoomTrigger : MonoBehaviour
         //triggerUI.SetActive(false);
     }
 
-    public IEnumerator TurnOffUITimer()
+    public IEnumerator TurnOffInteractUITimer()
     {
         yield return new WaitForSeconds(5f);
-        triggerUI.SetActive(false);
         RoomInteract.SetActive(false);
     }
 
-    private void RoomFoundUI()
+    public IEnumerator TurnOffRoomLabel()
+    {
+        yield return new WaitForSeconds(5f);
+        triggerUI.SetActive(false);
+    }
+
+    private void RoomInteractUI()
+    {
+        RoomInteract.SetActive(true);
+        RoomInteract.transform.GetComponent<TMP_Text>().text = "'" + objectRoom.RoomName + "'";
+        StartCoroutine(TurnOffInteractUITimer());
+    }
+
+    private void RoomLabelUI()
     {
         triggerUI.SetActive(true);
         triggerUI.transform.GetComponent<TMP_Text>().text = "'" + objectRoom.RoomName + "'";
-        StartCoroutine(TurnOffUITimer());
+        StartCoroutine(TurnOffRoomLabel());
     }
 
     public void CheckRoomInteract()

@@ -8,10 +8,9 @@ public class QuestGiver : CharacterInteract
     public static QuestGiver Instance { get; set; }
     public bool AssignedQuest { get; set; }
     public bool Helped { get; set; }
-    [SerializeField]
-    private GameObject quests;
-    [SerializeField]
-    public string questType;
+    [SerializeField] private GameObject quests;
+    [SerializeField] public string questType;
+    [SerializeField] GameObject rewardUI;
     public Quest Quest { get; set; }
     public GameObject questInProgressUI;
     public GameObject questCompletedUI;
@@ -19,6 +18,7 @@ public class QuestGiver : CharacterInteract
 
     private void Start()
     {
+        rewardUI.SetActive(false);
         focusUI.SetActive(false);
         interactUI.SetActive(false);
         questInProgressUI.SetActive(false);
@@ -42,7 +42,7 @@ public class QuestGiver : CharacterInteract
             if (!Quest.Completed)
             {
                 questInProgressUI.SetActive(true);
-                questInProgressUI.transform.GetComponent<TMP_Text>().text = "Quest Accepted: " + "'" + Quest.QuestName + "'\n - " + Quest.Description;
+                questInProgressUI.transform.GetComponent<TMP_Text>().text = "Active quest: " + "'" + Quest.QuestName + "'\n - " + Quest.Description;
                 DialogueManager.Instance.AddNewDialogue(dialogue, characterName, portrait);
             }
             else
@@ -79,7 +79,12 @@ public class QuestGiver : CharacterInteract
     {
         if (Quest.Completed)
         {
-            //Quest.GiveReward();
+            if (Quest.ItemReward != null)
+            {
+                //DatabaseController.Instance.GiveItem(itemre)        // Fix this so that you can't get key before speaking to QuestGiver a second time.
+                rewardUI.transform.GetComponent<TMP_Text>().text = "Received " + Quest.ItemReward.ItemName;
+                rewardUI.SetActive(true);
+            }
             AssignedQuest = false;
             Helped = true;
 
@@ -126,6 +131,7 @@ public class QuestGiver : CharacterInteract
     {
         yield return new WaitForSeconds(5f);
         questCompletedUI.SetActive(false);
+        rewardUI.SetActive(false);
     }
 
     private void QuestCompletedUIOff()

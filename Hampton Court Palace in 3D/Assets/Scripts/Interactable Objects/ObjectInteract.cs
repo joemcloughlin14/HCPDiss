@@ -66,7 +66,7 @@ public class ObjectInteract : Interactable
 
     //public void CheckIfQuestItem(string ItemID)
     //{
-    //    if (Quests.Instance.Goals.Contains(ItemDatabase.Instance.GetItem(ItemID))
+    //    if (Quest.Instance.Goals.Contains(ItemDatabase.Instance.GetItem(ItemID))
     //    {
     //        Debug.Log("This is a quest item");
     //    }

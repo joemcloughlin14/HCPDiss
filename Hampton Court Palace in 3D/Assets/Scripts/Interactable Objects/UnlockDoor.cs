@@ -31,13 +31,20 @@ public class UnlockDoor : Interactable
         base.OnFocus();
         if (canBeInteractedWith && !isCurrentlyInteracted)
         {
-            focusUI.transform.GetChild(0).GetComponent<TMP_Text>().text = "This is a " + objectItem.ItemName;
-            interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectItem.addedToDatabaseString;
-        }
-        else
-        {
-            HideFocusUI();
-        }
+            if (DatabaseController.Instance.databaseItems.Contains(unlockItem))
+            {
+                focusUI.transform.GetChild(0).GetComponent<TMP_Text>().text = "Key for " + objectRoom.RoomName + " detected. Click to unlock.";
+            }
+            else if (!DatabaseController.Instance.databaseItems.Contains(unlockItem))
+            {
+                focusUI.transform.GetChild(0).GetComponent<TMP_Text>().text = "This door to the " + objectRoom.RoomName + " is locked. Find the key to unlock it.";
+                interactUI.transform.GetChild(0).GetComponent<TMP_Text>().text = objectItem.addedToDatabaseString;
+            }
+            else
+            {
+                HideFocusUI();
+            }
+        }     
     }
 
     public override void OnInteract()
@@ -46,8 +53,8 @@ public class UnlockDoor : Interactable
 
         if (canBeInteractedWith && DatabaseController.Instance.databaseItems.Contains(unlockItem))
         {
-            Destroy(lockedDoorObject);      // unlocks door
             RoomUnlockedUI();
+            Destroy(lockedDoorObject);      // unlocks door
             interactUI.SetActive(false);
         }
 
