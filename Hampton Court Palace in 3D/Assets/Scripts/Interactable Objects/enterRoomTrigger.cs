@@ -6,18 +6,18 @@ using TMPro;
 public class enterRoomTrigger : MonoBehaviour
 {
     [SerializeField]
-    GameObject triggerUI;
+    GameObject roomLabelUI;
     [SerializeField] public string JSONRoomSlug;             // this must be identical to the objectSlug in JSON file.
     public Room objectRoom;
     [SerializeField]
-    GameObject RoomInteract;
+    GameObject RoomDiscoveredUI;
     bool roomEntered;
     bool playerDetected;
     GameObject leaveUI;
 
     private void Start()
     {
-        triggerUI.SetActive(false);
+        roomLabelUI.SetActive(false);
         objectRoom = ItemDatabase.Instance.GetRoom(JSONRoomSlug);
         roomEntered = false;
     }
@@ -29,6 +29,7 @@ public class enterRoomTrigger : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R))
             {
                 RoomLabelUI();
+                //RoomInteractUI();
             }
         }
     }
@@ -37,7 +38,7 @@ public class enterRoomTrigger : MonoBehaviour
     {
         Debug.Log("Player entered trigger.");
         roomEntered = true;
-        RoomInteractUI();
+        //RoomInteractUI();
         CheckRoomInteract();
     }
 
@@ -57,26 +58,26 @@ public class enterRoomTrigger : MonoBehaviour
     public IEnumerator TurnOffInteractUITimer()
     {
         yield return new WaitForSeconds(5f);
-        RoomInteract.SetActive(false);
+        RoomDiscoveredUI.SetActive(false);
     }
 
     public IEnumerator TurnOffRoomLabel()
     {
         yield return new WaitForSeconds(5f);
-        triggerUI.SetActive(false);
+        roomLabelUI.SetActive(false);
     }
 
     private void RoomInteractUI()
     {
-        RoomInteract.SetActive(true);
-        RoomInteract.transform.GetComponent<TMP_Text>().text = "'" + objectRoom.RoomName + "'";
+        RoomDiscoveredUI.SetActive(true);
+        RoomDiscoveredUI.transform.GetComponent<TMP_Text>().text = "Discovered: " + objectRoom.RoomName + ". Room has been added to the database.";
         StartCoroutine(TurnOffInteractUITimer());
     }
 
     private void RoomLabelUI()
     {
-        triggerUI.SetActive(true);
-        triggerUI.transform.GetComponent<TMP_Text>().text = "'" + objectRoom.RoomName + "'";
+        roomLabelUI.SetActive(true);
+        roomLabelUI.transform.GetComponent<TMP_Text>().text = "'" + objectRoom.RoomName + "'";
         StartCoroutine(TurnOffRoomLabel());
     }
 
@@ -85,8 +86,9 @@ public class enterRoomTrigger : MonoBehaviour
         if (!DatabaseController.Instance.databaseRooms.Contains(objectRoom))
         {
             DatabaseController.Instance.GiveRoom(objectRoom);
-            RoomInteract.transform.GetComponent<TMP_Text>().text = objectRoom.RoomName + " has been added to the room database. Press I to learn more.";
-            RoomInteract.SetActive(true);
+            RoomInteractUI();
+            //RoomInteract.transform.GetComponent<TMP_Text>().text = "Discovered: " + objectRoom.RoomName + ". Room has been added to the database.";
+            //RoomInteract.SetActive(true);
         }
         //else
         //{
