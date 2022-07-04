@@ -26,5 +26,12 @@
     "addedToDatabaseString": "This door is still locked. Find the key to access.",
     "description": "Locked door to Great Kitchens",
     "itemType": "DoorLock"
+  },
+  {
+    "objectSlug": "moat",
+    "itemName": "Moat",
+    "addedToDatabaseString": "The palace moat. Click to find out more.",
+    "description": "This moat was added in 1514 by Cardinal Wolsey. It was likely used to wash out waste from the common jakes into the river.",
+    "itemType": "ItemOfInterest"
   }
 ]
